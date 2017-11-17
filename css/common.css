@@ -1,0 +1,74 @@
+/*适配页面样式*/
+#mainError{
+	display: block;
+	position: absolute;
+	_position: absolute;
+ 	top:50%;
+ 	left:50%;
+ 	margin-left:-315px;
+ 	margin-top:-120px;
+}
+.msg{
+	width: 630px;
+	position: absolute;
+	_position: absolute;
+	bottom: -42px;
+	font-size: 18px;
+	left:0;
+	color: #333;
+	line-height: 30px;
+}
+.msg>p{
+	text-align: center;
+	margin: 0px;
+	line-height: 30px;
+}
+.choose{
+	position: absolute;
+	top:260px;
+	left: 45px;
+	width: 540px;
+}
+.browserItem{
+	float: left;
+	width: 270px;
+	text-align: center;
+}
+.browserItem>a{
+	display:inline-block;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 25px;
+}
+.browserItem img{
+			
+}
+.browserItem span{
+	font-size: 14px;
+	color: #333;
+}
+.noAgain{
+	width: 630px;
+}
+.noAgain>p{
+	text-align: center;
+}
+.choose>span{
+	position: absolute;
+    	top: 159px;
+   	left: 235px;
+	font-size: 12px;
+	color: #333;
+}
+.choose>span>img{
+	margin-right: 10px; 
+}
+.noAgain{
+	position: relative;
+	top:210px;
+}
+.close{
+	position: absolute;
+    	top: -50px;
+    	right: 0px;
+}

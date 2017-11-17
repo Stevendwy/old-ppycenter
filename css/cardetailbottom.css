@@ -1,0 +1,15 @@
+.BottomContainer {
+	position: relative;
+    text-align: left;
+    font-size: 14px;
+    padding-left: 20px;
+    width: calc(100% - 20px);
+    background: #3F424D;
+}
+
+.BottomContainer span {
+	margin-left: 5px;
+    margin-right: 40px;
+    font-size: 14px;
+    color: #FFFFFF;
+}

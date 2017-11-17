@@ -1,0 +1,17 @@
+.shopping-container {
+  padding-left: 30px;
+}
+.shopping-container .shopping-title {
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  color: #333;
+}
+.shopping-container .shopping-list {
+  display: flex;
+}
+.shopping-container .container-shopping-null {
+  background: url(/img/p_nullb.png) no-repeat center center;
+  height: 504px;
+  background-size: 20%;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+		<META HTTP-EQUIV="expires" CONTENT="0">
+		<title>零零汽-专业汽配查询平台</title>
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquire.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/header.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/middlevip.css">		
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/bubble.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquiretop.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquiremiddle.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquirebottom.css">
+		 <link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/userpay.css"> 
+		<!-- <link rel="stylesheet" type="text/css" href="http://192.168.10.111/css/userpay.css">		 -->
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquirepart.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/cardetailmiddle.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/cardetailbottom.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquirevincontent.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/floatwindow.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/common.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/center.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/base.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/inquirevin.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/fixeddiv.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/dialog.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/okbtn.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/feedback.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/sliderscenter.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/verificationwindows.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/page.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/qr.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/shareform.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/middleshopping.css">		
+		
+		<script src="https://cdns.007vin.com/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="shortcut icon" href="https://cdns.007vin.com/img/logo.ico"/>
+		<style type="text/css">
+			@media only screen and (max-width: 1024px){
+				.MiddleContentContainer .MiddleContent,.MiddleContentHead .MiddleHeadCenter{
+					left: 0;
+				}
+			}
+
+			.useragreement {
+				padding: 8px;
+				height: calc(100% - 40px);
+				background-color: white;
+				overflow-y: scroll;
+				padding-top: 20px;
+			}
+
+			.useragreement>p {
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='header'>
+			<div class='content'>
+				<div class="login">
+					<img src='https://cdns.007vin.com/img/p_007.png' alt='logo' onclick="location.href='/'"/>
+					<span class="back" onclick="location.href='/'">
+						返回
+					</span>
+				</div>
+				<div id='header-utils' class='utils'>
+					<div class='show'>
+						<a>
+							<div class="FeedBackButton">反馈</div>
+						</a>
+						<div class='person'>
+							<div class="center"><span class="icon"></span>个人中心
+								<div class="RedPoint" style="display:none;"></div>
+							</div>
+							<div class='person-hidden'>
+								<div class="LogoutItem" onclick='location.href = "/user/profile?binds=search&type=messages"'>
+									<img src="https://cdns.007vin.com/img/icon_mess.png"/>
+									<span>消息中心</span>
+									<div class="RedPoint" style="display:none"></div>
+								</div>
+								<div class="LogoutItem" onclick='location.href = "/user/profile?binds=search"'>
+									<img src="https://cdns.007vin.com/img/user_icon.png"/>
+									<span>个人中心</span>
+								</div>
+								<div class="LogoutItem" onclick='location.href = "/user/profile?binds=home"'>
+									<img src="https://cdns.007vin.com/img/p_pay.png"/>
+									<span>续费</span>
+								</div>
+								<div class="LogoutItem" onclick='location.href = "/logout"'>
+									<img src="https://cdns.007vin.com/img/icon_exit.png"/>
+									<span>退出</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="root"></div>
+		<div id="searching" style="position: fixed;bottom:0;left:0;width: 390px;height: 20px;background:#D8D8D8;color:#333;line-height: 20px;padding-left: 20px;font-size: 10px;display: none;">
+			searching搜索中…
+		</div>
+		<script src="https://cdns.007vin.com/js/html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdns.007vin.com/js/drawDom.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="https://cdns.007vin.com/js/less.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdns.007vin.com/js/utils.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var cdnHost = "https://cdns.007vin.com/"
+			var version = ""
+		</script>
+		<script src="https://cdns.007vin.com/js/userprofile.js" type="text/javascript" charset="utf-8"></script> 
+    	<!-- <script src="http://192.168.10.111/js/userprofile.js" type="text/javascript" charset="utf-8"></script> -->
+		
+	</body>
+</html>

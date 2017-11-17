@@ -1,0 +1,407 @@
+.MiddleContainer {
+	position: relative;
+	/*width: 1024px;*/
+	/*height: calc(100% - 154px);*/
+	/*left: calc(50% - 512px);*/
+	min-height: 556px;
+	/*background-color: #F3F3F3;*/
+	/*background:-webkit-gradient(linear, 0 0, 0 60%, from(#f3f3f3), to(white));*/
+	/*background: url("https://cdns.007vin.com/img/p_beijing.png") no-repeat center 140px;*/
+	background: #fff;
+}
+@media only screen and (min-height: 600px){
+	.MiddleContainer {
+		min-height: calc(100% - 72px);
+	}
+}
+
+.MiddleBackgroundImg {
+	position: absolute;
+	left: calc(50% - 124px);
+	top: 140px;
+}
+
+/*VIN车架号查询*/
+.InquireVINContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 20px;
+}
+
+/*车型查询*/
+.CarPartContentBody{
+	width: 1024px;
+	padding: 10px 0px;
+/*	border: 1px solid red;*/
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	position: relative;
+}
+.TitleListChangeShow{
+	width: 1004px;
+    height: 44px;
+    line-height: 44px;
+    top: 0;
+    position: fixed;
+    z-index: 1111;
+    /*padding: 10px 0 0 20px;*/    
+    background-color: rgba(255,255,255,0.95);
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid #999999;
+}
+.CarPartBodyTitleContent{
+	width: 100%;
+    position: relative;
+    margin-top: 6px;
+}
+.CarpartBodyTitle{
+	font-family: PingFangSC-Medium;
+	font-size: 14px;
+	color: #0D6FB8;
+	position: relative;
+	/*margin-bottom: 10px;*/
+	padding: 8px 0 0 10px;
+}
+.CarContentShow{
+	padding: 10px 0 0 10px;	
+}
+.CarContentShowOther{
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.CarContentShowFirst{
+	padding-left: 0;
+}
+/*添加移动属性*/
+.CarContentShowMove{
+	display: flex;
+    flex-wrap: wrap;
+}
+.CarContentShowMoveClick{
+	background: #F2F2F2;
+	text-align: center;
+	height: 44px;
+	line-height: 44px;
+	width: 100%;
+	position: relative;       
+	margin-bottom: 10px;
+    font-family: PingFangSC-Regular;
+	font-size: 12px;
+	color: #666666;
+}
+.ImgMoveshow{
+	background: rgba(255,255,255,0.80);
+    /*border: 1px solid #D8D8D8;*/
+    width: 96px;
+    height: 88px;
+    position: absolute;
+}
+
+.Imgpaixu{
+	/*position: absolute;
+    right: 26px;
+    top: -2px;*/
+}
+.Imghuifu{
+	position: absolute;
+    left: -33px;
+    top: 2px;
+}
+.Imgbaocun{
+	position: absolute;
+    right: 53px;
+    top: 3px;
+}
+.whitchimgmove{
+	position: absolute;
+	z-index: 6;
+}
+.CarContentShowMoveClickOk{
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+    color: #666666;
+    position: absolute;
+    right: 90px;
+    top: 0;
+}
+.CarContentShowMoveClickBack{
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+    color: #666666;
+    position: absolute;
+    left: 32px;
+    top: 0;
+}
+.CarpartBodyTitleSpanFort{
+	/*width: 80px;*/
+    display: inline-block;
+}
+.CarpartBodyTitleSpan{
+	color: #333333;
+	padding-left: 10px;
+}
+.CarpartBodyTitleSpanBack{
+	height: 40px;
+    width: 60px;
+    z-index: 5;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+.CarpartBodyTitleSpanBack span{
+	position: relative;
+    top: -3px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #666666;
+}
+.CarpartBodyTitleSpanMove{
+	height: 35px;
+    width: 80px;
+    position: absolute;
+    right: 0px;
+    top: 19px;
+    z-index: 2;
+}
+.CarpartBodyTitleSpanMove span{
+	position: relative;
+    top: -15px;
+    right: -3px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #666666;
+}
+/*变色*/
+.CarContentShowMoveClickOk:hover,.CarContentShowMoveClickBack:hover,
+.CarpartBodyTitleSpanBack span:hover,.CarpartBodyTitleSpanMove span:hover{
+	color:#1AA0F3;
+}
+.CarPartBodyTitleMessage{
+	position: absolute;
+    right: 0;
+    top: -7px;
+    font-family: PingFangSC-Regular;
+	font-size: 14px;
+	color: #666666;
+	cursor: pointer;
+	padding-left: 954px;
+	/*border: 1px solid rgba(0,0,0,0.30);*/
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
+}
+.CarPartBodyTitleMessage:hover{
+	border: 1px solid #45C0FF;
+}
+.CarPartBodyTitleMessage span{
+	position: relative;
+    top: -13px;
+    right: -5px;
+}
+.CarPartBodyTitleMessage div{
+	width: 71px;
+    height: 45px;
+    position: relative;
+   	z-index: 3;
+    background-color: white;
+}
+.CarPartBodyTitleMessage div span{
+	position: relative;
+    top: -13px;
+    right: -5px;
+}
+.CarPartBodyTitleMessageSearch{
+	/*SEARCH NAV*/
+	width: 100%;
+	height: 44px;	
+	background-color:#F2F2F2;
+	padding:0 10px;
+    position: relative;
+    left: -10px;	
+    margin: 10px 0;
+}
+.CarPartBodyTitleMessageSearch,.CarPartBodyTitleMessageSearch span{
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+	color: #333333;
+	line-height: 44px;
+}
+.CarPartBodyTitleMessageSearch span{
+	margin-left: 10px;
+}
+
+
+.CarPartBodyImgBody{
+	width: 98px;
+	height: 90px;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+}
+.CarPartBodyImgBodyClick,.CarPartBodyImgBody:hover{
+	border: 1px solid #45C0FF;
+	width: 96px;
+	height: 88px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+}
+
+.CarPartBodyImgBody img{
+	width: 98px;
+	height: 58px;
+	cursor: pointer;
+}
+.CarPartBodyImgBody span{
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+	color: #666666;
+}
+.CarpartBodyImg{
+    padding: 1px 0 10px 0;
+}
+.CarPartBodyImgBodyList1,
+.CarPartBodyImgBodyList2,
+.CarPartBodyImgBodyList3,
+.CarPartBodyImgBodyList4,
+.CarPartBodyImgBodyList5,
+.CarPartBodyImgBodyList6,
+.CarPartBodyImgBodyList7{
+	border-top: 1px solid rgba(0,0,0,0);
+	padding-bottom: 10px;
+	position: relative;
+}
+.CarPartBodyImgBodyList1 .CarContentShow div,
+.CarPartBodyImgBodyList2 .CarContentShow div,
+.CarPartBodyImgBodyList3 .CarContentShow div,
+.CarPartBodyImgBodyList4 .CarContentShow div,
+.CarPartBodyImgBodyList5 .CarContentShow div,
+.CarPartBodyImgBodyList6 .CarContentShow div,
+.CarPartBodyImgBodyList7 .CarContentShow div,
+.CarPartBodyImgBodyListHas{
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	margin-right: 10px;
+	line-height: 30px;
+	text-overflow: ellipsis;
+    overflow-x: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	position: relative;
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+}
+.CarPartBodyImgBodyListHas span{
+	color: #999999;
+}
+.CarPartBodyImgBodyListHasClick{
+	display: inline-block;
+	width: 150px;
+	height: 40px;
+	margin-right: 10px;
+	line-height: 40px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	color: #1AA0F3;
+}
+.CarPartBodyImgBodyListHas:hover{
+	color: #1AA0F3;
+}
+.CarPartBodyImgBodyListHasFloat{
+	position: fixed;
+	background-image: url(https://cdns.007vin.com/img/icon_wenzitishi.png);
+	background-size: 100% 100%;
+    word-break: break-word;
+    padding:10px;
+    /*max-height: 50px;*/
+   font-size: 14px;
+    min-width: 150px;
+}
+.CarPartBodyImgBodyList1 .CarContentShow div,
+.CarPartBodyImgBodyList2 .CarContentShow div,
+.CarPartBodyImgBodyList3 .CarContentShow div,
+.CarPartBodyImgBodyList4 .CarContentShow div,
+.CarPartBodyImgBodyList5 .CarContentShow div,
+.CarPartBodyImgBodyList6 .CarContentShow div,
+.CarPartBodyImgBodyList7 .CarContentShow div{
+	width: 233px;
+}
+.CarPartBodyImgBodyList1 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+.CarPartBodyImgBodyList2 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+.CarPartBodyImgBodyList3 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+.CarPartBodyImgBodyList4 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+.CarPartBodyImgBodyList5 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+.CarPartBodyImgBodyList6 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+.CarPartBodyImgBodyList7 .CarContentShow div:nth-child(4*n+4){
+	margin-right: 0;
+}
+
+.InquireCarContainerSureBtn{
+	background: #0D6FB8;
+	border: 1px solid #0D6FB8;
+	box-shadow: inset 0px -2px 0px 0px #135B91;
+	border-radius: 4px;
+	color: #FFFFFF;
+	width: 200px;
+	height: 40px;
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+	margin:20px auto 60px;
+	outline: none;
+	cursor: pointer;
+}
+.InquireCarContainerSureBtn:hover{
+	background-color: #2687D0;
+}
+/*新加底部显示处理*/
+.MiddleContentContainerNewcontent{
+	position: relative;
+    top: 0px;
+}
+.ShowZoneSearchContainerBackgroundnew{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    z-index: 3;
+    background: rgba(0,0,0,0.2);
+    border-top: transparent;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.MiddleContentContainernew{
+	position: relative;
+    top: 0px;
+    width: 100%;
+    height: calc(100% - 230px);
+    z-index: 1;
+    background-color: white;
+    margin-top: 8px;
+}
+.MiddleBottomContainernew{
+	position: relative;
+    width: 100%;
+    background-color: white;
+    margin: 6px 0 -13px 0;
+    border: 1px solid #d8d8d8;
+}
+/*零件号查询*/
+.InquirePartContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: green;
+}

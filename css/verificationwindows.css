@@ -1,0 +1,151 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.sizeFull {
+  width: 100%;
+  height: 100%;
+}
+.sizeFullWidth {
+  width: 100%;
+}
+.sizeFullHeight {
+  height: 100%;
+}
+.container_verification_window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  z-index: 999;
+}
+.container_verification_window .container_content {
+  position: relative;
+  margin-top: 104px;
+  width: 560px;
+  height: 356px;
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container_verification_window .container_content span.title {
+  color: #666;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.container_verification_window .container_content span.remind {
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+}
+.container_verification_window .container_content div {
+  position: relative;
+  height: 32px;
+  width: 100%;
+  margin: 10px 0;
+}
+.container_verification_window .container_content div > span {
+  position: absolute;
+  color: #333;
+  font-size: 14px;
+  margin-right: 20px;
+  top: 10px;
+  left: 27px;
+}
+.container_verification_window .container_content div .short_span {
+  left: 27px;
+}
+.container_verification_window .container_content div > input {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0;
+  font-size: 14px;
+  outline: 0;
+  padding-left: 10px;
+  margin-left: 120px;
+}
+.container_verification_window .container_content div .short {
+  width: 160px;
+}
+.container_verification_window .container_content div .long {
+  width: 328px;
+}
+.container_verification_window .container_content div .clear {
+  position: absolute;
+  right: 105px;
+  top: -15px;
+  width: 40px;
+  height: 40px;
+  z-index: 5;
+  background: url(https://cdns.007vin.com/img/p_wo.png) 0 -680px;
+}
+.container_verification_window .container_content div .inputvalue {
+  right: 275px;
+}
+.container_verification_window .container_content div .inputvalue:hover {
+  background: url(https://cdns.007vin.com/img/p_wo.png) 0 -640px;
+}
+.container_verification_window .container_content div .inputpassnum:hover {
+  background: url(https://cdns.007vin.com/img/p_wo.png) 0 -640px;
+}
+.container_verification_window .container_content div .inputpassnew:hover {
+  background: url(https://cdns.007vin.com/img/p_wo.png) 0 -640px;
+}
+.container_verification_window .container_content div .button_verification {
+  margin-left: 20px;
+  width: 148px;
+  height: 32px;
+  outline: 0;
+  border: 0;
+  background-color: #999;
+  border-radius: 2px;
+  color: white;
+}
+.container_verification_window .container_content div .wait {
+  background-color: #1aa0f3;
+}
+.container_verification_window .container_content div .enable {
+  background-color: #1aa0f3;
+}
+.container_verification_window .container_content .goto_pay {
+  width: 328px;
+  height: 32px;
+  background-color: #1aa0f3;
+  color: white;
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+  margin-top: 30px;
+}
+.container_verification_window .container_content .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  outline: 0;
+  background: url(https://cdns.007vin.com/img/p_wo.png) 0 360px;
+  cursor: pointer;
+}
+.container_verification_window .container_content .close:hover {
+  background: url(https://cdns.007vin.com/img/p_wo.png) 0 240px;
+}

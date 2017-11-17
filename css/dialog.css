@@ -1,0 +1,44 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.sizeFull {
+  width: 100%;
+  height: 100%;
+}
+.sizeFullWidth {
+  width: 100%;
+}
+.sizeFullHeight {
+  height: 100%;
+}
+.ToastContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.ToastContainer .ToastMessage {
+  position: relative;
+  font-size: 14px;
+  top: 270px;
+  height: 14px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,67 @@
+.container-qr {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .4);
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.container-qr>.qr {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    background-color: white;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.container-qr>.qr>.bind {
+    color: #4a90e2;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.container-qr>.qr>img {
+    width: 180px;
+    height: auto;
+}
+
+.container-qr>.qr>.scan {
+    color: #999;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.container-qr>.qr>.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #f2f2f2;
+}
+
+.container-qr>.qr>.close>img {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    width: 12px;
+    height: 12px;
+}

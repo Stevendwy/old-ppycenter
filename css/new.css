@@ -1,0 +1,246 @@
+body{background-color: rgb(246,246,246);}
+/*head*/
+
+.ulHead{background: #FFFFFF;box-shadow: 0px 4px 14px 0px rgba(118,187,255,0.40);border-radius: 4px;width: 160px;padding: 5px 10px;position: absolute;z-index: 100;right: 0;top: 67px;}
+.ulHead li {float: none;line-height: 12px;height: 30px;line-height: 30px;}
+.ulHead li>a{
+    display: block;
+}
+.ulHead li img{padding: 0px 10px;margin: 0px;}
+.ulHead li span{  background-color: #ff3232;font-family: PingFangSC-Regular;font-size: 10px;color: #FFFFFF;border-radius: 10px;width: 20px;height: 20px;position: absolute;line-height: 20px;text-align: center;right: 30px;margin-top: 5px;}
+.spMbl {font-family: PingFangSC-Regular;font-size: 12px;color: #FFFFFF;}
+
+.headnavcent>img{ margin-top: 15px;height:33px;width:179px;}
+.headnav,.headfoot{ background-color: #165089; height: 68px;width: 100%;}
+.headfoot{ background-image: url(https://cdns.007vin.com/img/Pay/p_background.jpg);}
+.headnavcent,.headfootcent,.carcenter{ width: 1190px;margin: 0 auto;position: relative;}
+.headnavcenter,.headnavright{ float: right;}
+.headnavcenter li span{ font-family: PingFangSC-Regular;font-size: 14px;color: #FFFFFF;line-height: 62px;}
+.headnavcenter li:nth-child(n+3){ margin-right: 20px;}
+.headnavcenter li:nth-child(n+3) img{ margin-right: 0;}
+.headnavcenter li img{ margin-left: 10px;margin-right: 10px;}
+.headnavcenter li span:hover{color: #00C7FF;cursor:pointer;}
+.dvCenter{ margin-top: 22px;}
+.headfootcent ul{margin-top: 4px;}
+.headfootcent ul li{ font-family: PingFangSC-Medium;font-size: 20px;color: #FFFFFF;line-height: 61px;}
+.headfootcent ul li img{ margin:0 10px;}
+
+/*nav*/
+.bss{ border-bottom: 4px solid #00C7FF;border-radius: 2px;}
+.logoshow{ float: right;max-height: 52px;margin-top: 10px;}
+.collect{ float: right;height: 60px;width: 60px;background-color: #3D7CFF;margin-right: 20px;text-align: center;}
+.collect:hover{background-color:#5F93FF;}
+.collect img{ margin: 0 0 0 4px;}
+.collect span{ color: white;word-break: keep-all;white-space: nowrap;}
+
+.carcenter{width: 1002px;position: relative;}
+.carleft{ width: 410px;float: left;position: relative;}
+.carleft h4{ font-family: PingFangSC-Regular;font-size: 12px;color: #666666;margin-top: 8px;padding-left: 20px;}
+.carleft h3 { font-family: PingFangSC-Medium;font-size: 14px;color: #666666;margin-top: 11px;margin-bottom: 5px;line-height: 23px;}
+.carshow{width: 440px;height: 408px;position: relative;}
+
+#picDiv{margin:8px 8px 4px 0;border:1px solid white;padding:0;width:440px;height:520px;float:left;overflow:hidden;position:relative;background-color: white;}
+#dragAble{width:100%;position: absolute;}
+#dragAble #static{background-color:#ddd;position: absolute;width: 100%;}
+#static>img{height: 100%;}
+#main{position: relative;background: #fff;}
+#main>img{border: 1px solid gainsboro;}
+#main>div{position: absolute;z-index: 1000;}
+.carlogo .car_alert{display: none;width: 58px;height:32px;position:absolute;top:-21px;right:4px;background: #FFFFFF;box-shadow: 0px 2px 4px 0px rgba(61,124,255,0.40);border-radius: 4px;/*display:none;*/}
+.carlogo:hover .car_alert{display: block;}
+.carlogo .car_alert p{font-family: PingFangSC-Regular;margin-top:10px;margin-left: 5px;font-size: 10px;color: #333;}
+.carlogo .car_alert b{position: absolute;top:31px;left: 24px;width:5px;height: 5px;display: block;border:5px solid transparent;border-top:5px solid #fff;}
+.carmessage{width: 60px;position: absolute;right: 0;top: 8px;}
+#btn3,#btn1,#btn2{
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.40);border-radius: 4px;color:#999999;font-size: 14px;
+    position: absolute; right: 10px;
+    width: 26px;height: 26px;
+    background-size:100% 100%;
+    border-width: 1px;
+    padding: 0;
+}
+#btn2{top: 44px;background: url("https://cdns.007vin.com/img/jian.png") no-repeat -1px -1px;}
+#btn1{top: 15px;background: url("https://cdns.007vin.com/img/jia.png") no-repeat -1px -1px;}
+#btn3{top: 73px;background: url("https://cdns.007vin.com/img/icon_chongzhi.png") no-repeat -1px -1px;}
+
+.nolipartshow{width: 116px;height: 32px;line-height: 27px; text-align: center;font-size: 10px;color: black;background-image: url(https://cdns.007vin.com/img/icon_tishikuang.png);background-size: 100% 100%;background-repeat: no-repeat;position: absolute;}
+
+.carright{ width: 552px;float: right;position: relative;margin-bottom: 20px;}
+.righthead {margin-top: 25px;}
+.rightheadzhu,.rightheadci{  border: 1px solid #999999;border-radius: 4px;line-height: 28px;text-align: left;padding-left: 8px; width: 181px;height: 28px;float: left;position: relative;margin-right: 10px;}
+.rightheadzhuimg,.rightheadciimg{float: right; width: 20px;height:20px; background-image: url(https://cdns.007vin.com/img/carpart/carstart.png);background-position: 70px;}
+.rightheadzhuimg{background-position-x: 70px;}
+.rigjtchangetitle {position: absolute;font-family: PingFangSC-Regular;font-size: 14px;color: #999999;top: -26px;left: 7px;}
+.rightchangetitleshow{font-family: PingFangSC-Regular;font-size: 14px;color: #333333;max-width: 160px;overflow: hidden;}
+.rightheadzhuhas,.rightheadcihas{ display: none;position: absolute;top: 25px;left: 0;z-index: 2; width: 100%;max-height: 500px;overflow-y: auto;background: #FFFFFF;box-shadow: 0px 4px 14px 0px rgba(24,48,81,0.40);}
+.rightheadzhuhas ul li,.rightheadcihas ul li{overflow: hidden; width: 100%;height: 32px;line-height: 32px;font-family: PingFangSC-Regular;font-size: 14px;color: #333333;text-align: left;}
+.rightheadzhuhas ul li span:first-child{ margin: 0 10px;}
+.rightheadcihas ul li span:first-child{ margin: 0 10px;}
+.rightheadzhuhas ul li:hover{background-color:#DFF0FF;cursor:pointer;}
+.rightheadcihas ul li:hover{background-color:#DFF0FF;cursor:pointer;}
+
+.rightheadzu { float: right;}
+.rightheadzu ul li input{ width: 80px;height: 28px;border: 1px solid #979797;border-radius: 4px;background-color: #eff3f5; font-family: PingFangSC-Regular;font-size: 14px;color: #333333;}
+.rightheadzu ul li input:first-child{margin-right: 5px;}
+.rightheadzu ul li input:hover{border: 1px solid #00C7FF;}
+.rightpartboot{margin-top: 10px;width: 100%;min-height: 473px;padding-top: 10px;clear: both;}
+.rightparthead,.rightpartli{width: 100%;}
+.rightparthead {clear: both;}
+.rightpartli{
+background: url("https://cdns.007vin.com/img/p_liebiao.png") no-repeat center center;
+min-height: 286px;max-height: 490px;overflow-y: auto;background-color: #FFFFFF;}
+.rightparthead span,.rightpartli ul li span{float: left;height: 32px;text-align: center;word-break: break-word;}
+.rightparthead span{background-color:#0D6FB8;font-family: PingFangSC-Regular;font-size: 12px;color: #FFFFFF;line-height: 32px;}
+.rightparthead span:first-child{width: 40px;}
+.rightparthead span:nth-child(2){width: 80px;}
+.rightparthead span:nth-child(3){width: 180px;}
+.rightparthead span:nth-child(4){width: 60px;}
+.rightparthead span:nth-child(5){width: 30px;}
+.rightparthead span:nth-child(6){width: 120px;}
+.rightparthead span:nth-child(7){width: 42px;}
+
+
+.menuTb{border: 1px solid white;position: relative;}
+.menuTb td{height: 40px;text-align: center;word-break: break-word;font-family: PingFangSC-Regular;font-size: 14px;color: #333333;border: 0;padding-left: 2px;}
+.rightpartli .menuTb tr{width: 100%;border-bottom: 1px solid #D8D8D8;height: 32px;min-height: 32px}
+.rightpartli .menuTb tr:hover{background-color:#DFF0FF;cursor:pointer;}
+.rightpartli .menuTb td:first-child{width: 40px;}
+.rightpartli .menuTb td:nth-child(2){width: 80px;text-align: left;}
+.rightpartli .menuTb td:nth-child(3){width: 180px;text-align: left;}
+.rightpartli .menuTb td:nth-child(4){width: 60px;}
+.rightpartli .menuTb td:nth-child(5){width: 30px;}
+.rightpartli .menuTb td:nth-child(6){width: 120px;text-align: left;position: relative;padding-left: 20px;}
+.carmessageshow{ display: none; background-image: url(https://cdns.007vin.com/img/carpart/blueshow.png);background-size: 100% 100%;width: 134px;height: 40px;position: absolute;top: -11px;left: 28px;font-family: PingFangSC-Regular;font-size: 14px;color: #FFFFFF;text-align: center;line-height: 40px;padding-left: 5px;}
+.rightpartli .menuTb td:nth-child(7){width: 24px;}
+/*newchange*/
+.rightparthead span:nth-child(7){width: 80px;}
+.rightparthead span:nth-child(8){width: 42px;}
+.rightparthead span:nth-child(9){width: 60px;}
+.rightparthead span:nth-child(10){width: 48px;}
+
+.rightpartli .menuTb td:nth-child(7){width: 80px;}
+.rightpartli .menuTb td:nth-child(8){width: 42px;}
+.rightpartli .menuTb td:nth-child(9){width: 60px;}
+.rightpartli .menuTb td:nth-child(10){width: 48px;}
+
+.rightheadci,.rightheadzhu{text-align: left;font-size: 12px;color: #333333;margin-right:4px;padding-left:4px;}
+/*.rightheadci{width: 247px;}*/
+.rightheadci{width: 320px;}
+.righthead .rightheadzu ul li input{width: 80px;font-family: PingFangSC-Regular;font-size: 12px;color: #999999;margin: 0;}
+.rightheadzu ul li:first-child{margin-right: 10px;}
+.message{
+    text-decoration: underline;
+}
+.bottomshow{width: 440px;height: 30px;line-height: 30px;color: black;margin: 0 auto;transform: translateX(45px);}
+.bottomshowis{text-align: center; float: left;width: 170px;height: 30px;border-radius: 4px;display: inline-flex;}
+.bottomshowis span.blue{color:#3D7CFF}
+.bottomshowis span.red{color:#FF3232}
+/*图片描点*/
+
+.showwhitch{width: 30px;height: 30px;border: 3px solid #FF0000;position: absolute;color: white;text-align: center;padding: 10px;}
+.showwhitchadd{background-color: #FF0000;}
+/*模态框*/
+.car_modal{position:absolute;left:254px;top:56px;z-index: 1000;width:621px;height:350px;background: #FFFFFF;box-shadow: 2px 2px 12px 0px rgba(0,64,128,0.40);border-radius: 8px;}
+.car_modalcenter{max-height: 280px;overflow-y: scroll;}
+.car_modal .m_header{border-radius: 4px;height:32px;background: #0D6FB8;box-shadow: 2px 2px 12px 0px rgba(22,79,137,0.40);}
+.car_modal .m_header p{width: 90%;text-align: center;float:left;font-family: PingFangSC-Regular;font-size: 14px;color: #FFFFFF;height:32px;line-height:32px;margin-left:20px;}
+.car_modal .m_header span{float:right;height:32px;margin-right: 10px;text-align: right;font-size: 26px;line-height:32px;color: #FFFFFF;}
+.m_body .m_bnav ul{width: 100%;height:30px;border-bottom:2px solid #DFF0FF;}
+.m_body .m_bnav ul li{margin-left:153px;height: 30px;line-height: 32px;font-family: PingFangSC-Regular;font-size: 14px;padding:0 2px;}
+.m_body .m_bnav ul li.m_active{border-bottom: 2px solid #00C7FF;font-size: 14px;color: #3D7CFF;}
+.m_body .m_bnav ul li.m_active a{color:#00C7FF;}
+.m_body .m_bnav ul li:last-child{margin-left:163px;}
+.m_bmsg ul li{width: 100%;}
+.m_bmsg ul{margin-top:10px;}
+.m_bmsg ul li{margin:4px 0;}
+.m_bmsg ul li p{width:98px;margin-left:22px;font-family: PingFangSC-Regular;font-size: 12px;color: #333333;height: 17px;line-height: 17px;}
+
+.m_bmsg ul li span{font-family: PingFangSC-Regular;font-size: 12px;color: #333333;height: 17px;line-height: 17px;}
+.iden{display: none;}
+/*个体装备*/
+.equipment .m_bnav ul{height: 32px;}
+.equipment .m_bnav ul li:first-child{padding-right:33px;height: 30px;border-right:1px solid #D8D8D8;}
+.equipment .m_bnav ul li:last-child{margin-left:76px;}
+.equipment{display: none;}
+/*v页*/
+.v_page{display: none;}
+.v_page .m_body .m_bleft{width: 140px;border-right:1px solid #D8D8D8;height: 318px;float:left;}
+.v_page .m_body .m_bleft ul>li{width:100%;padding: 2px 0 2px 4px;height: 21px;line-height:21px;font-family: PingFangSC-Regular;font-size: 12px;color: #333333;}
+.v_page .m_body .m_bleft ul>li.active{background: #DFF0FF;}
+.v_page .m_body .m_bright{float:left;padding:10px 0 0 10px;width:480px;}
+.v_page .m_body .m_bright li{width: 100%;font-family: PingFangSC-Regular;font-size: 12px;color: #333333;height: 17px;line-height:17px;margin-bottom:4px;}
+
+/*footer*/
+.footerbottom {width: 100%;height: 72px;background-color:#3F424D;text-align: center;margin-top: 30px;}
+.footercont{width: 400px;text-align: center;margin: 0 auto;padding-top: 10px;line-height: 13px}
+.footercont ul li{font-family: PingFangSC-Regular;font-size: 14px;color: #FFFFFF;margin-right: 10px;line-height: 26px;}
+.footerbottom span{font-family: PingFangSC-Regular;font-size: 14px;color: #FFFFFF;margin: 0 auto;}
+
+/*favourite*/
+.favorite_nav{background:#4F84BE;}
+.favorite_bar{width: 962px;height: 68px;margin:0 auto;text-align: center;}
+.favorite_bar h1{ margin: 0; padding: 0;line-height: 68px;height: 68px;font-weight: normal;font-family: PingFangSC-Medium;font-size: 20px;color: #FFFFFF;}
+.favorite_item{width: 962px;margin:0 auto;position: relative;}
+.favorite_item>ul,.favorite_item>ul>li{width: 100%;}
+.favorite_items{margin-top: 10px;}
+.favorite_items>P{font-family: PingFangSC-Regular;font-size: 12px;color: #999999;margin: 10px 0 4px 0;}
+.favorite_items>div{height: 142px;padding:10px;background: #fff;}
+.favorite_l:hover{background: #DFF0FF;}
+.favorite_l>img{width:120px;height: 120px;float:left;margin-right: 40px;}
+.favorite_l>ul{float:left;width: 70%;}
+.favorite_l>ul>li:first-child{font-family: PingFangSC-Medium;font-size: 14px;color: #666666; margin-bottom: 10px;}
+.favorite_l>ul>li{width: 100%;font-family: PingFangSC-Regular;font-size: 14px;color: #666666;height: 20px;line-height: 20px;margin-bottom:4px;}
+.favorite_r{float:right;position: relative;}
+.collect_alert{ width: 21px;height: 21px;background-image: url(https://cdns.007vin.com/img/carpart/icon_star.png);background-position: -9px;overflow: hidden;position: absolute;right: 5px;top: 0;}
+.favorite_r img{width: 20px;height: 19px;}
+.favorite_r>a{float: right;}
+.favorite_r>a:first-child{position: absolute;top:0;right:9px;}
+.favorite_r>a:last-child{display: block;font-family: PingFangSC-Regular;font-size: 14px;color: #00C7FF;margin-top:106px;text-decoration: underline;}
+.collectfavor{position: absolute;top:178px;left:411px;width:140px;height: 68px;background: rgba(0,0,0,0.80);border-radius: 4px;display: none;text-align: center;}
+.collectfavor>p{font-family: PingFangSC-Medium;font-size: 14px;color: #FFFFFF;height:68px;line-height:68px;text-align: center;}
+
+/*search 弹框*/
+.nothave{display: none;position: absolute;top: 120px;margin-left: 50%;transform: translateX(-50%);}
+.nothaveshow{font-size: 20px;color: black;}
+.lastkong{
+    background-color:#fff !important;
+}
+
+/*新需求 主组分组*/
+.righthead {
+    margin-top: 15px;
+}
+.rightheadzhu{
+    position: relative;
+    left: 38px;
+}
+.rigjtchangetitle {
+    top: -2px;
+    left: -38px;
+}
+.rightheadci {
+    width: 305px;
+    position: relative;
+    left: 76px;
+}
+.rigjtchangetitle {
+    top: -2px;
+    left: -38px;
+}
+.h3show,.h4show{
+    height: 47px !important;
+    margin: 0;padding: 0 !important;
+}
+.carleft h3{
+    line-height: 47px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 4px;
+
+}
+.carlefts h4 {
+    line-height: 47px;
+    margin-top: 4px;
+    padding-left: 0px;
+}

@@ -1,0 +1,29 @@
+.InfoBubbleContainer {
+	position: absolute;
+	bottom: 45px;
+	width: 150px;
+	height: 32px;
+	background-color: white;
+	text-align: center;
+	left: 10px;
+	background-image: url(https://cdns.007vin.com/img/icon_tishikuang.png);
+    background-size: 100% 120%;
+}
+
+.InfoBubbleImg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 150px;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.InfoBubbleContent {
+	position: relative;
+	left: 15px;
+	width: 120px;
+	font-size: 10px;
+	line-height: 32px;
+}

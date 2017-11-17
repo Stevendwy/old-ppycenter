@@ -1,0 +1,79 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.sizeFull {
+  width: 100%;
+  height: 100%;
+}
+.sizeFullWidth {
+  width: 100%;
+}
+.sizeFullHeight {
+  height: 100%;
+}
+.okFather {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.okFather .okContentMove {
+  position: relative;
+  top: 20%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  height: 140px;
+  width: 180px;
+}
+.okFather .okContentMove .okMessage {
+  font-family: PingFangSC-Regular;
+  position: relative;
+  font-size: 14px;
+  color: #FFFFFF;
+  width: 100%;
+  height: calc(60%);
+  line-height: 84px;
+  text-align: center;
+}
+.okFooterLeft,
+.okFooterRight {
+  position: absolute;
+  bottom: 0;
+  color: #D8D8D8;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  height: 40px;
+  width: 50%;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #D8D8D8;
+  border-bottom: transparent;
+}
+.okFooterLeft {
+  border-left: transparent;
+  left: 0;
+}
+.okFooterRight {
+  border-right: transparent;
+  right: 0;
+}
+.okFooterLeft:hover,
+.okFooterRight:hover {
+  color: #1AA0F3;
+}

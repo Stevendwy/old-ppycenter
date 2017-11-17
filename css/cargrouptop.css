@@ -1,0 +1,97 @@
+/*Annotation is width adjustment
+  注释掉的为新需求宽度调整*/
+.TopContainer {
+	position: relative;
+	/*width: calc(100% - 80px);
+	left: 40px;*/
+	height: 44px;
+}
+
+.TopBackground {
+	position: absolute;
+	/*left: -40px;
+	right: -40px;*/
+	left: 0;
+	right:0;
+	top: 0;
+	bottom: 0;
+	background-color: #165089;
+}
+
+.TopLogo {
+	position: relative;
+	cursor: pointer;
+	height: 44px;
+	width: auto;
+	left: 10px;
+}
+
+.TopRightContainer {
+	float: right;
+	margin-right: 10px;
+	height: 44px;
+	line-height: 44px;
+}
+
+.TopRightSelectersContainer {
+	position: absolute;
+	right: 150px;
+}
+
+.TopRightSelector {
+	font-size: 14px;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.TopRightSelector:hover {
+	color: #00B7FF;
+}
+
+.TopRightAccountContainer {
+	position: relative;
+}
+
+.TopRightAccountContainer img {
+	position: relative;
+	top: 7px;
+	width: 30px;
+}
+
+.TopRightAccount {
+	position: relative;
+	color: white;
+	bottom: 2px;
+	font-size: 14px;
+	margin-right: 5px;
+}
+
+.Logout {
+	position: fixed;
+    background-color: white;
+    z-index: 999;
+    /* top: 44px; */
+    z-index: 1000;
+    right: 10px;
+    font-size: 14px;
+    /* padding-left: 43px; */
+    /* width: 150px; */
+    text-align: right;
+    line-height: 40px;
+    padding-right: 42px;
+    color: #333;
+    cursor: pointer;
+	top:42px;
+    background: url(https://cdns.007vin.com/img/p_exit.png) no-repeat center right;
+}
+
+.Logout img {
+	position: relative;
+    width: 25px;
+    height: auto;
+    top: 8px;
+    /* left: 20px; */
+    margin-left: 10px;
+}

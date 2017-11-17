@@ -1,0 +1,168 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.sizeFull {
+  width: 100%;
+  height: 100%;
+}
+.sizeFullWidth {
+  width: 100%;
+}
+.sizeFullHeight {
+  height: 100%;
+}
+.ShowZoneSearchContainerBackground {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: white;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+.ShowZoneSearchContainer {
+  position: relative;
+  left: calc(50% - 257px);
+  top: 35px;
+  width: 514px;
+  height: 40px;
+}
+.ShowZoneSearchContainer .ShowZoneSearchRemind {
+  position: absolute;
+  left: 10px;
+  top: -25px;
+  width: auto;
+  height: 20px;
+  color: #00c7ff;
+}
+.ShowZoneSearchContainer .ShowZoneSearchLength {
+  position: absolute;
+  left: 380px;
+  top: 10px;
+  width: auto;
+  height: 20px;
+  color: #999999;
+  font-size: 14px;
+}
+.ShowZoneSearchContainer .ShowZoneSearchInput {
+  position: relative;
+  top: 0;
+  width: 404px;
+  height: 40px;
+  font-size: 14px;
+  padding-left: 10px;
+  border: 1px #979797 solid;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ShowZoneSearchContainer .ShowZoneSearchInput:hover {
+  border: 1px #0d6fb8 solid;
+}
+.ShowZoneSearchContainer .ShowZoneSearchInput:focus {
+  border: 1px #0d6fb8 solid;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer {
+  position: absolute;
+  right: 110px;
+  top: 0;
+  width: 168px;
+  height: 38px;
+  font-size: 14px;
+  background: white;
+  border: 1px #979797 solid;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer:hover {
+  border: 1px #0d6fb8 solid;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer .InquireVINPullBrandsTitle {
+  position: relative;
+  padding-left: 10px;
+  line-height: 40px;
+  color: #999;
+  cursor: pointer;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer .InquireVINPullBrandsTitleImg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer .InquireVINPullBrandsList {
+  position: relative;
+  left: -1px;
+  top: -1px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  max-height: 568px;
+  border: 1px #979797 solid;
+  overflow-y: scroll;
+  z-index: 111;
+  cursor: pointer;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer .InquireVINPullBrandsList .InquireVINPullBrandsListItem {
+  position: relative;
+  color: #333333;
+  width: calc(90%);
+  line-height: 32px;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ShowZoneSearchContainer .InquireVINPullBrandsContainer .InquireVINPullBrandsList .InquireVINPullBrandsListItem:hover {
+  background-color: #DFF0FF;
+}
+.ShowZoneSearchContainer .ShowZoneSearchButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 110px;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  background: #0d6fb8;
+  box-shadow: inset 0px -3px 0px 0px #0c5993;
+}
+.ShowZoneSearchContainer .ShowZoneSearchButton:hover {
+  background: #2687D0;
+  box-shadow: inset 0px -3px 0px 0px #0d6fb8;
+}
+.ShowZoneSearchContainer .ShowZoneSearchButton:active {
+  border: 1px #0d6fb8 solid;
+}
+.ShowZoneSearchContainer .ShowZoneSearchClearButton {
+  position: absolute;
+  left: 355px;
+  top: 15px;
+  width: "auto";
+  height: "auto";
+}
+.InquireVINDetailContainer {
+  position: relative;
+  left: calc(50% - 100px);
+  top: 100px;
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+  background: #0d6fb8;
+  border: 0;
+  cursor: pointer;
+}
+.InquireVINDetailContainer:active {
+  border: 1px #0d6fb8 solid;
+}

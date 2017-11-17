@@ -1,0 +1,263 @@
+.InquirePart{
+	/*height: 100%;*/
+
+}
+.InquirePart>.bigSearchModal{
+	background: url("https://cdns.007vin.com/img/img_logo1.png") no-repeat center center
+	
+}
+.InquireUserCmd{
+	width: 514px;
+	margin: 0 auto;
+	padding-top:35px;
+	padding-bottom: 25px;
+	display: table;
+}
+.SearchContainer{
+	width: 404px;
+	position: relative;
+	height: 40px;
+	float:left;
+}
+.SearchContainer>input{
+	width: 392px;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 0 0 10px;
+    border: 1px solid #999;
+}
+.SearchContainer>input:focus{
+	border: 1px solid #0D6FB8;
+}
+.PartHistoryList{
+	position: absolute;
+	width:402px;
+	border:1px solid #999999;
+	background: #fff;
+	color:#666;
+	top:40px;
+	z-index: 99999;
+}
+::-webkit-input-placeholder {
+	font-size: 14px;
+}
+::-moz-placeholder {
+	font-size: 14px;
+}
+.HistoryItem{
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.HistoryItem:hover{
+	background: #DFF0FF;
+}
+.HistoryItem>div{
+	float: left;
+	width:100%
+	
+}
+.HistoryItem>div:first-child{
+	/*width:100%*/
+}
+.HistoryItem>div:last-child{
+	/*width:6%*/
+}
+.toHistory{
+	height: 30px;
+	line-height: 30px;
+	border-top: 1px solid #999;
+	background: #d8d8d8;
+	cursor: pointer;
+}
+.moreHistory{
+	width: 324px;
+	float:left;
+	border-right:1px solid #999;
+	color:#333;
+	font-size: 14px;
+}
+
+.searchIcon{
+	margin:0 5px;
+	vertical-align: text-bottom;
+}
+.closeItem{
+	width: 77px;
+	float:left;
+	color:#333;
+	text-align: center;
+	font-size: 14px;
+}
+.SearchButton{
+	float: left;
+	background: #0D6FB8;
+	width: 110px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: center;
+	color:#fff;
+	cursor: pointer;
+	box-shadow: inset 0px -3px 0px 0px #0C5993;
+}
+.SearchButton:hover{
+	background: #2687D0;
+	box-shadow: inset 0px -3px 0px 0px #0D6FB8;
+}
+.clearInput{
+	position:absolute;
+	top:0;
+	right: 0;
+	text-align: center;
+	line-height: 40px;
+	width:39px;
+	height: 40px;
+}
+/*出错样式*/
+.msgError{
+	position: absolute;
+    /*left: calc(50% - 266px);*/
+    top: 86px;
+    color: red;
+}
+
+
+/*表格样式*/
+.resultContainer{
+	width: 1002px;
+	margin: 0 auto;
+	padding: 10px;
+	min-height: 386px;
+	background: #fff;
+	/*border:1px solid #d8d8d8;*/
+	/*height:calc(100% - 192px);*/
+	overflow: hidden;
+}
+
+.InquirePartResult{
+	height: 100%;
+}
+.SearchHead{
+	min-width: 1024px;
+}
+.SearchHead>div{
+	font-size: 14px;
+	margin: 10px 0;
+}
+.SearchList{
+	/*height: calc(100% - 73px);*/
+	/*margin-bottom: 60px;*/
+}
+.SearchLists{
+	border: 1px solid #d8d8d8;
+	overflow: auto;
+	height: calc(100% - 32px);
+}
+
+.BrandChoose{
+	display: inline-block;
+	margin-left: 20px;
+	position: relative;
+    top: 5px;
+}
+.BrandChoose>div{
+	float: left;
+}
+.BrandItem{
+	margin-right: 20px;
+}
+.BrandItem>img{
+	cursor: pointer;
+	margin-right: 10px;
+	vertical-align: middle;
+    width: 14px;
+}
+.SearchTitle{
+	/*background: #0d6fb8;*/
+	background: #D8D8D8;
+	height: 40px;
+	line-height: 40px;
+}
+.SearchTitle>div{
+	float: left;
+	text-align: center;
+	/*color: White;*/
+	color: #333333;
+	font-size: 14px;
+}
+.ListItem{
+	display: flex;
+	align-items: center;
+	padding: 9px 0 10px 0;
+	background: #fff;
+	border-bottom:1px solid #D8D8D8;
+	overflow: hidden;
+	cursor: pointer;
+}
+.ListItem:hover{
+	background: #B4DCFF;
+}
+.ListItem>div{
+	float: left;
+	text-align: center;
+	font-size: 14px;
+    color: #333333;
+    border: 0;
+}
+/*新需求*/
+.toBorderBottom{
+	/*border-bottom:2px solid #f3f3f3;*/
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+}
+.bigSearchModal{
+	position: absolute;
+    width: 100%;
+    min-height: 300px;
+    padding-top: 10px;
+}
+.bigSearchModal1{
+    width: 100%;
+    min-height: 402px;
+    padding-top: 10px;
+}
+.errorMainText{
+	min-width: 1024px;
+	margin: 0 0 0 20px;
+}
+.errorMainText>p{
+	margin-bottom: 10px;
+	margin-top:10px;
+}
+.errorMainText span{
+	color:#FF3232;
+}
+.errorMainText ol{
+    list-style-type: disc;	
+    padding-left: 20px;
+}
+.SearchHead>div:first-child{
+	margin-top: 0;	
+	color:#666;
+	font-size: 12px;
+}
+.resultContainer{
+	padding-top: 0;
+}
+.errorMainText ol>li{
+	height: 32px;
+}
+.toBlackBorder{
+    border-bottom: 1px solid #999999;
+    width: 100%;
+    height: 44px;
+    position: fixed;
+    top: 0px;
+    background-color: rgba(255,255,255,0.95);
+    z-index: 1111;
+}
+.toBlackBorder>.TitleListChangeShow{
+	border: none;
+}

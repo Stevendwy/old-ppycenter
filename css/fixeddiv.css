@@ -1,0 +1,112 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.sizeFull {
+  width: 100%;
+  height: 100%;
+}
+.sizeFullWidth {
+  width: 100%;
+}
+.sizeFullHeight {
+  height: 100%;
+}
+.clearHrefOfA a {
+  color: #666666;
+  text-decoration: none;
+}
+.clearHrefOfA a:hover,
+.clearHrefOfA a:visited,
+.clearHrefOfA a:link,
+.clearHrefOfA a:active {
+  color: #666666;
+}
+.clickButton {
+  height: 44px;
+  background: #fff;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 4px;
+}
+.FixedContainer {
+  position: fixed;
+  top: auto;
+  right: 0;
+  bottom: 82px;
+  left: auto;
+  width: 40px;
+  font-size: 10px;
+  z-index: 3;
+}
+.FixedContainer a {
+  color: #666666;
+  text-decoration: none;
+}
+.FixedContainer a:hover,
+.FixedContainer a:visited,
+.FixedContainer a:link,
+.FixedContainer a:active {
+  color: #666666;
+}
+.FixedContainer .EleMainItem {
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+.FixedContainer .EleMainItem a {
+  color: #666666;
+  text-decoration: none;
+}
+.FixedContainer .EleMainItem a:hover,
+.FixedContainer .EleMainItem a:visited,
+.FixedContainer .EleMainItem a:link,
+.FixedContainer .EleMainItem a:active {
+  color: #666666;
+}
+.FixedContainer .EleMainItem .ElevatorItem {
+  color: #666666;
+  height: 40px;
+  display: flex;
+  padding: 0 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #d8d8d8;
+}
+.FixedContainer .FoldItem {
+  height: 44px;
+  background: #fff;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 4px;
+  background: url("https://cdns.007vin.com/img/icon_liebiao.png") no-repeat -4px 0;
+}
+.FixedContainer .FoldItem:hover {
+  background: url("https://cdns.007vin.com/img/icon_liebiaodian.png") no-repeat -4px 0;
+}
+.FixedContainer .ToTopItem {
+  height: 44px;
+  background: #fff;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 4px;
+  background: url(https://cdns.007vin.com/img/icon_top.png) no-repeat -2px 0;
+}
+.FixedContainer .ToTopItem:hover {
+  background: url(https://cdns.007vin.com/img/icon_topdian.png) no-repeat 0px 0;
+}

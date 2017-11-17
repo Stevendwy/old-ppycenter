@@ -1,0 +1,250 @@
+/*Middle中间部分*/
+.MiddleContentContainer {
+    position: relative;
+    top: 46px;
+    width: 100%;
+    height: calc(100% - 230px);
+    z-index: 1;
+    background-color: white;
+    border-top:2px solid #f3f3f3;
+    /*padding-top:10px;*/
+}
+
+.MiddleContent {
+	position: relative;
+	width: 1024px;
+	left: calc(50% - 512px);
+}
+
+.MiddleContentBackground {
+	position: absolute;
+	top: -2px;
+	width: 100%;
+	height: 100%;
+	background: url("../img/p_beijing2.png") no-repeat center center;
+}
+
+/*Middle中间左侧部分*/
+.MiddleLeftContainer {
+    position: relative;
+    display: inline-block;
+    width: calc(50% - 5px);
+    /*height: 100%;*/
+    height: 290px;
+    text-align: center;
+    background-color: white;
+    border: #D8D8D8 1px solid;
+}
+
+.MiddleLeftTopContainer {
+    position: relative;
+    /*height: 50px;*/
+   height: 44px;
+}
+
+.MiddleLeftTopTitleContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.MiddleLeftTopTitle {
+    position: relative;
+    font-size: 14px;
+    color: #333;
+}
+
+.MiddleLeftMiddleContainer {
+    position: relative;
+    height: 200px;
+    top:18px;
+    width: 100%;
+}
+
+.MiddleLeftMiddleRemind {
+    position: absolute;
+    display: none;
+    top: -20px;
+    width: 150px;
+    height: 32px;
+    left: calc(50% - 75px);
+    line-height: 27px;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    background-image: url(/ppy/img/icon_tishikuang.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.MiddleLeftMiddleWaitingContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.MiddleLeftMiddleWaitingContainer img {
+    margin-top: calc(25% - 40px);
+}
+.MiddleLeftMiddleImgContainer{
+
+}
+.MiddleLeftMiddleImgContainer img {
+	cursor: pointer;
+    max-width: 320px;
+    max-height: 193px;
+}
+
+.MiddleLeftBottomContainer {
+    position: relative;
+    font-size: 14px;
+    color: #999;
+}
+
+/*Middle中间右侧部分*/
+.MiddleRightContainer {
+    position: absolute;
+    width: calc(50% - 5px);
+    top: 0;
+    right: 0;
+    /*height: 100%;*/
+    height: 290px;
+    background-color: white;
+    border: #D8D8D8 1px solid;
+}
+
+/*中右上*/
+.MiddleRightTopContainer {
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.MiddleRightSelectorContainer {
+    /*position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #d8d8d8;
+    text-align: center;
+}
+
+.MiddleRightSelectorItem {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    width: 33.33%;
+    /*width: 20%;*/
+    /*margin-left: 6.6%;
+    margin-right: 6.6%;*/
+    padding: 11px 0;
+    cursor: pointer;
+}
+
+.MiddleRightSelectorItemSelected {
+    border-bottom: #0D6FB8 2px solid;
+    color: #333;
+}
+
+/*中右下*/
+.MiddleRightBottomContainer {
+    position: relative;
+    width: 100%;
+    /*height: calc(100% - 40px);*/
+    height: 250px;
+}
+
+.MiddleRightInfoFormContainer {
+    /*position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding-top: 20px;
+    padding-left: 40px;
+    overflow-y: scroll;
+    border: #D8D8D8 1px solid;
+    */
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    right: 0px;
+    bottom: 0px;
+    padding-top: 20px;
+    /* padding-left: 40px; */
+    overflow-y: auto;
+    /*border: #D8D8D8 1px solid;*/
+}
+
+.MiddleRightInfoFormWaitingContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0;
+    padding-bottom: 30%;
+    text-align: center;
+}
+
+.MiddleRightInfoFormWaitingContainer img {
+    position: relative;
+    margin-top: calc(30% - 40px);
+    left: -40px;
+}
+
+.MiddleRightInfoFormItem {
+    position: relative;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    padding: 1px 0;
+}
+
+/*新需求*/
+.ErrorContainer{
+	position: absolute;
+    top: 110px;
+    z-index: 110;	
+}
+.ErrorContainer>.bigSearchModal{
+	border: 0;
+}
+.MiddleContentHead{
+	height: 36px;
+	/*background: #f3f3f3;*/
+	line-height: 34px;
+	font-size: 14px;
+	/*margin-bottom: 10px;*/
+	
+}
+.MiddleHeadCenter{
+	position: relative;
+    width: 1024px;
+    left: calc(50% - 512px);
+
+}
+.MiddleContentHead .MiddleHeadCenter>span>span:first-child{
+	color:#FF3232;
+    text-decoration: underline;
+    cursor:pointer
+}
+.MiddleContentHead .MiddleHeadCenter>span>span:last-child{
+	color:#0D6FB8;
+    text-decoration: underline;
+    cursor:pointer
+}
+.MiddleContentHead .MiddleHeadCenter>span:hover>span{
+	text-decoration: none;
+}

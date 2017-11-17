@@ -1,0 +1,89 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.sizeFull {
+  width: 100%;
+  height: 100%;
+}
+.sizeFullWidth {
+  width: 100%;
+}
+.sizeFullHeight {
+  height: 100%;
+}
+.paginationF {
+  margin: 20px;
+  padding-bottom: 30px;
+}
+.paginationDiv {
+  display: block;
+  margin-top: 10px;
+  color: #535353;
+  line-height: 32px;
+  text-align: center;
+}
+.paginationDiv a {
+  float: left;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 4px;
+  background: #FFFFFF;
+  border: 1px solid #D8D8D8;
+  border-radius: 4px;
+}
+.paginationDiv .next,
+.paginationDiv .prev {
+  border: 1px solid #e5e5e5;
+  color: #999999;
+}
+.paginationDiv .firstandlast {
+  width: 60px;
+}
+.paginationDiv .next:hover,
+.paginationDiv .prev:hover {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+}
+.paginationDiv .next:before,
+.paginationDiv .prev:before {
+  font-size: 14px;
+}
+.paginationDiv .disable.next,
+.paginationDiv .prev.disable {
+  border-color: #e5e5e5;
+  cursor: default;
+}
+.paginationDiv .disable.next:before,
+.paginationDiv .prev.disable:before {
+  color: #a0a0a0;
+  border-color: #337ab7;
+}
+.paginationDiv .num {
+  font-size: 12px;
+  color: #999999;
+}
+.paginationDiv .num.current {
+  border: 1px solid #333333;
+  color: #333333;
+}
+.paginationDiv .num:hover {
+  background-color: #ddd;
+  border-color: #ddd;
+  color: #1a1a1a;
+}

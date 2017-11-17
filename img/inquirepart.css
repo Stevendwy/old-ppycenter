@@ -1,0 +1,239 @@
+.InquirePart{
+	/*height: 100%;*/
+
+}
+.InquirePart>.bigSearchModal{
+	background: url("../img/p_beijing2.png") no-repeat center center
+	
+}
+.InquireUserCmd{
+	width: 552px;
+	margin: 0 auto;
+	padding-top:30px;
+	padding-bottom: 16px;
+	display: table;
+}
+.SearchContainer{
+	width: 440px;
+	position: relative;
+	height: 40px;
+	float:left;
+}
+.SearchContainer>input{
+	width: 428px;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 0 0 10px;
+    border: 1px solid #999;
+}
+.SearchContainer>input:focus{
+	border: 1px solid #0D6FB8;
+}
+.PartHistoryList{
+	position: absolute;
+	width:438px;
+	border:1px solid #999999;
+	background: #fff;
+	color:#666;
+	z-index: 99999;
+}
+.HistoryItem{
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.HistoryItem:hover{
+	background: #DFF0FF;
+}
+.HistoryItem>div{
+	float: left;
+}
+.HistoryItem>div:first-child{
+	width:94%
+}
+.HistoryItem>div:last-child{
+	width:6%
+}
+.toHistory{
+	height: 30px;
+	line-height: 30px;
+	border-top: 1px solid #999;
+	background: #d8d8d8;
+	cursor: pointer;
+}
+.moreHistory{
+	width: 360px;
+	float:left;
+	border-right:1px solid #999;
+	color:#333;
+}
+
+.searchIcon{
+	margin:0 5px;
+	vertical-align: text-bottom;
+}
+.closeItem{
+	width: 77px;
+	float:left;
+	color:#333;
+	text-align: center;
+}
+.SearchButton{
+	float: left;
+	background: #0D6FB8;
+	width: 110px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: center;
+	color:#fff;
+	cursor: pointer;
+}
+.clearInput{
+	position:absolute;
+	top:0;
+	right: 0;
+	text-align: center;
+	line-height: 40px;
+	width:39px;
+	height: 40px;
+}
+/*出错样式*/
+.msgError{
+	position: absolute;
+    /*left: calc(50% - 266px);*/
+    top: 86px;
+    color: red;
+}
+
+
+/*表格样式*/
+.resultContainer{
+	width: 1002px;
+	margin: 0 auto;
+	padding: 10px;
+	min-height: 386px;
+	background: #fff;
+	/*border:1px solid #d8d8d8;*/
+	/*height:calc(100% - 192px);*/
+	overflow: hidden;
+}
+
+.InquirePartResult{
+	height: 100%;
+}
+.SearchHead{
+	min-width: 1024px;
+}
+.SearchHead>div{
+	font-size: 14px;
+	margin: 10px 0;
+}
+.SearchList{
+	/*height: calc(100% - 73px);*/
+	/*margin-bottom: 60px;*/
+}
+.SearchLists{
+	border: 1px solid #999;
+	overflow: auto;
+	height: calc(100% - 32px);
+}
+
+.BrandChoose{
+	display: inline-block;
+	margin-left: 20px;
+	position: relative;
+    top: 5px;
+}
+.BrandChoose>div{
+	float: left;
+}
+.BrandItem{
+	margin-right: 20px;
+}
+.BrandItem>img{
+	cursor: pointer;
+	margin-right: 10px;
+	vertical-align: middle;
+    width: 14px;
+}
+.SearchTitle{
+	/*background: #0d6fb8;*/
+	background: #D8D8D8;
+	height: 40px;
+	line-height: 40px;
+}
+.SearchTitle>div{
+	float: left;
+	text-align: center;
+	/*color: White;*/
+	color: #333333;
+	font-size: 14px;
+}
+.ListItem{
+	display: flex;
+	align-items: center;
+	padding: 9px 0 10px 0;
+	background: #fff;
+	border-bottom:1px solid #D8D8D8;
+	overflow: hidden;
+	cursor: pointer;
+}
+.ListItem:hover{
+	background: #B4DCFF;
+}
+.ListItem>div{
+	float: left;
+	text-align: center;
+	font-size: 14px;
+    color: #333333;
+    border: 0;
+}
+/*新需求*/
+.bigSearchModal{
+	/*height: calc(100% - 92px);*/
+	/*height: 100%;*/
+	/*margin-top: 4px;*/
+	border-top:2px solid #f3f3f3;
+	min-height: 422px;
+	padding-top: 10px;
+}
+.errorMainText{
+	min-width: 1024px;
+	margin: 0 0 0 20px;
+}
+.errorMainText>p{
+	margin-bottom: 10px;
+	margin-top:10px;
+}
+.errorMainText span{
+	color:#FF3232;
+}
+.errorMainText ol{
+    list-style-type: disc;	
+    padding-left: 20px;
+}
+.SearchHead>div:first-child{
+	margin-top: 0;	
+	color:#666;
+	font-size: 12px;
+}
+.resultContainer{
+	padding-top: 0;
+}
+.errorMainText ol>li{
+	height: 32px;
+}
+.toBlackBorder{
+    border-bottom: 1px solid #999999;
+    width: 100%;
+    height: 44px;
+    position: fixed;
+    top: 0px;
+    background-color: rgba(255,255,255,0.95);
+    z-index: 1111;
+}
+.toBlackBorder>.TitleListChangeShow{
+	border: none;
+}
