@@ -20,8 +20,14 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
-            }
-        ]
+            },
+        ],
+        // rules: [
+        //     {
+        //       test: /\.utils\.js$/,
+        //       use: [ 'script-loader' ]
+        //     }
+        // ]
     },
     
     // plugins: [

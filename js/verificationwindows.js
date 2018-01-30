@@ -13,7 +13,7 @@ export default class VerificationWindows extends Component {
 			selfshow: true,
 			hiddenSelf: true,
 			surplusNumber: this.waitTime,
-			passwordsureWord: "字母与数字组合，6位以上",
+			passwordsureWord: zhEn("字母与数字组合，6位以上","Combination of letters and Numbers, six or more."),
 			buttonWait: true,
 			inputvalue: "",
 			inputpassnum: "",
@@ -41,7 +41,7 @@ export default class VerificationWindows extends Component {
 		}
 
 		if (_passwords !== _passwordsure) {
-			_newmess = "两次密码输入不一致"
+			_newmess = zhEn("两次密码输入不一致","The two passwords are inconsistent.")
 			this.props.verificBack(false, _newmess)
 			return
 		}
@@ -57,7 +57,7 @@ export default class VerificationWindows extends Component {
 				}
 				postAjax(_url,_obj,res=>{
 					if (res.code == 1) {
-						_newmess = "提现密码设置成功"
+						_newmess = zhEn("提现密码设置成功",'The withdrawal password is set successfully.')
 						clearInterval(this.interval)
 						this.state.surplusNumber = this.waitTime
 						this.setState({
@@ -83,7 +83,7 @@ export default class VerificationWindows extends Component {
 				}
 				postAjax(_uri, _obj, res => {
 					if (res.code == 1) {
-						_newmess = "密码修改成功"
+						_newmess = zhEn("密码修改成功",'Password modification successful')
 						clearInterval(this.interval)
 						this.state.surplusNumber = this.waitTime
 						this.setState({
@@ -93,9 +93,9 @@ export default class VerificationWindows extends Component {
 							inputpassnew: ""
 						})
 					} else if (res.code == 4) {
-						_newmess = "密码格式错误"
+						_newmess = zhEn("密码格式错误",'Password format error')
 					} else {
-						_newmess = "短信验证码不正确"
+						_newmess = zhEn("短信验证码不正确",'SMS verification code is incorrect.')
 					}
 					this.props.verificBack(true, _newmess)
 					//					this.restart()
@@ -115,7 +115,7 @@ export default class VerificationWindows extends Component {
 		let _uri = '/smsloggedin'
 		getAjax(_uri, "", res => {
 			// console.log(res+"验证码")
-			//					this.restart()
+			//this.restart()
 		},true)
 		this.interval = setInterval(() => {
 			let _surplusNumber = this.state.surplusNumber
@@ -163,12 +163,12 @@ export default class VerificationWindows extends Component {
 		let _restart = this.restart.bind(this)
 		let _buttonWait = this.state.buttonWait
 		let _passwordsureWord = this.state.passwordsureWord
-		let _buttonContent = _buttonWait ? '获取验证码' : (this.state.surplusNumber + 's 后重发')
+		let _buttonContent = _buttonWait ? zhEn('获取验证码','Verification') : (this.state.surplusNumber + zhEn('s 后重发','s after resend'))
 		let _buttonVerificationClass = 'button_verification'
 		if (_buttonWait) {
 			_buttonVerificationClass += ' wait'
 		}
-		let _sentto = "验证码发送至 " + this.props.phonenum
+		let _sentto = zhEn("验证码发送至 ",'The verification code is sent to.') + this.props.phonenum
 		//输入显示内容
 		let _inputvalue = this.state.inputvalue
 		let _inputpassnum = this.state.inputpassnum
@@ -176,24 +176,23 @@ export default class VerificationWindows extends Component {
 		let _show1 = _inputvalue.length >= 1 ? "block" : "none"
 		let _show2 = _inputpassnum.length >= 1 ? "block" : "none"
 		let _show3 = _inputpassnew.length >= 1 ? "block" : "none"
-	
-		let _title = this.props.special ? "手机验证设置提现密码":"修改密码"
-		let _password = this.props.special ? "设置提现密码":"新密码"
-		let _passwordsure = this.props.special ? "确认提现密码":"修改密码"
+		let _title = this.props.special ? zhEn("手机验证设置提现密码",'Verification set.'):zhEn("修改密码",'Change the password')
+		let _password = this.props.special ? zhEn("设置提现密码",'Set the withdrawal password.'):zhEn("新密码",'The new password')
+		let _passwordsure = this.props.special ? zhEn("确认提现密码",'Confirm the withdrawal password.'):zhEn("修改密码",'Change the password')
 		return (
 			<div className='container_verification_window' style={{ display: this.state.selfshow ? 'none' : 'flex' }}>
 				<div className='container_content'>
 					<span className='title'>{_title}</span>
 					<span className='remind'>{_sentto}</span>
 					<div>
-						<span className='short_span'>验证码</span>
+						{/* <span className='short_span'>验证码</span> */}
 						<input type="text" name="texthidden" style={{ display: "none" }} />
 						<input
 							type="text"
 							value={_inputvalue}
 							className='short'
 							autoComplete="off"
-							placeholder='6位数字'
+							placeholder={zhEn('6位数字','6 digits')}
 							onChange={this.change.bind(this)}
 							ref="surenum" />
 						<div className='clear inputvalue' style={{ display: _show1 }}
@@ -206,13 +205,13 @@ export default class VerificationWindows extends Component {
 						<button className={_buttonVerificationClass} onClick={_restart}>{_buttonContent}</button>
 					</div>
 					<div>
-						<span>{_password}</span>
+						{/* <span>{_password}</span> */}
 						<input type="password" name="passwordhidden" style={{ display: "none" }} />
 						<input type="password"
 							className='long'
 							autoComplete="off"
 							value={_inputpassnum}
-							placeholder='字母与数字组合，6位以上'
+							placeholder={zhEn('新密码（6位以上数字或字母)','New password (more than 6 digits or letters)')}
 							onChange={this.change.bind(this)}
 							ref="passwords" />
 						<div className='clear inputpassnum' style={{ display: _show2 }}
@@ -224,12 +223,12 @@ export default class VerificationWindows extends Component {
 							}}></div>
 					</div> 
 					<div>
-						<span>{_passwordsure}</span> 
+						{/* <span>{_passwordsure}</span>  */}
 						<input type="password"
 							className='long'
 							autoComplete="off"
 							value={_inputpassnew}
-							placeholder={_passwordsureWord}
+							placeholder={zhEn("确认密码（6位以上数字或字母）",'Confirm password (more than 6 digits or letters)')}
 							onChange={this.change.bind(this)}
 							ref="passwordsure" />
 						<div className='clear inputpassnew'
@@ -242,11 +241,11 @@ export default class VerificationWindows extends Component {
 					</div > 
 					<button className='goto_pay'
 							onClick={_okbtn}>
-						确认
+						{zhEn('确认','confirm')}
 					</button>
-					<button className='close'
-							onClick={_hidden}> 
-					</button> 
+					<div className='close'	onClick={_hidden}> 
+						<img src="https://cdns.007vin.com/img/user_close.png" alt="close"/>
+					</div> 
 				</div> 
 			</div>
 		)

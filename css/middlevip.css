@@ -14,9 +14,10 @@
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .vip-title {
   font-size: 14px;
-  color: #333333;
   height: 60px;
   line-height: 60px;
+  font-size: 20px;
+  color: #333333;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score {
   font-size: 14px;
@@ -24,8 +25,11 @@
   margin-bottom: 8px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score > div {
-  margin-bottom: 10px;
-  align-items: center;
+  display: flex;
+  width: 444px;
+  line-height: 38px;
+  height: 38px;
+  border-bottom: 1px solid #F2F2F2;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-score-container {
   display: flex;
@@ -45,7 +49,7 @@
   font-size: 10px;
   position: relative;
   right: -10px;
-  top: 2px;
+  top: 11px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-score-container .badge-iocn:hover .container-rule-title {
   display: block;
@@ -65,7 +69,7 @@
   position: absolute;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-score-container .operation-container {
-  margin-left: 48px;
+  margin-left: 85px;
   display: flex;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-score-container .operation-container span {
@@ -74,26 +78,22 @@
   color: #4A90E2;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-score-container .operation-container span:first-child {
-  padding-right: 20px;
   border-right: 1px solid #4A90E2;
   cursor: pointer;
-}
-.middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-score-container .operation-container span:last-child {
-  padding-left: 19px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container {
   display: flex;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container > span {
   display: flex;
-  width: 150px;
+  width: 300px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container .null-div {
   width: 14px;
   height: 14px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container .operation-container {
-  margin-left: 48px;
+  margin-left: 85px;
   display: flex;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container .operation-container span {
@@ -102,18 +102,14 @@
   color: #4A90E2;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container .operation-container span:first-child {
-  padding-right: 20px;
   cursor: pointer;
-}
-.middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .total-money-container .operation-container span:last-child {
-  padding-left: 19px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container {
   display: flex;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container > span {
   display: flex;
-  width: 150px;
+  width: 300px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container > span .badge-iocn {
   width: 14px;
@@ -126,7 +122,7 @@
   font-size: 10px;
   position: relative;
   right: -10px;
-  top: 2px;
+  top: 11px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container > span .badge-iocn:hover .container-rule-title {
   display: flex;
@@ -151,26 +147,23 @@
   height: 14px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container .operation-container {
-  margin-left: 48px;
+  margin-left: 85px;
   display: flex;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container .operation-container span {
   font-size: 14px;
   cursor: pointer;
+  width: 56px;
   color: #4A90E2;
+  text-align: right;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container .operation-container span:first-child {
-  padding-right: 20px;
   cursor: pointer;
 }
-.middle-vip-container .middle-main-container .vip-middle-box .vip-rules-box .user-score .user-money-container .operation-container span:last-child {
-  padding-left: 19px;
-}
 .middle-vip-container .middle-main-container .vip-middle-box .data-list-container {
-  width: 480px;
+  width: 444px;
   background: #FFFFFF;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
-  border-radius: 4px;
+  margin-bottom: 30px;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .data-list-container .data-list-title {
   width: 100%;
@@ -182,8 +175,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 12px;
-  font-size: 14px;
+  font-size: 20px;
   color: #333333;
 }
 .middle-vip-container .middle-main-container .vip-middle-box .data-list-container .data-list-title div:nth-child(2) {
@@ -206,6 +198,7 @@
 }
 .middle-vip-container .middle-main-container .vip-middle-box .data-list-container .data-list-item .list-item {
   width: 100%;
+  border-bottom: 1px solid #F2F2F2;
   height: 48px;
   display: flex;
 }
@@ -214,32 +207,37 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 12px;
   font-size: 14px;
   color: #333333;
 }
-.middle-vip-container .middle-main-container .vip-middle-box .data-list-container .data-list-item .list-item div:nth-child(2) {
+.middle-vip-container .middle-main-container .vip-middle-box .data-list-container .data-list-item .list-item div:nth-child(3) {
   justify-content: center;
   flex: 1;
   font-size: 12px;
-  border-left: 1px solid #ddd;
+}
+.middle-vip-container .middle-main-container .vip-middle-box .data-list-container .data-list-item .list-item div:nth-child(3) span {
+  color: #4A90E2;
+  cursor: pointer;
 }
 .middle-vip-container .middle-main-container .vip-middle-float {
-  background: url('/img/p_share.png') no-repeat 0 0;
-  width: 220px;
-  height: 340px;
+  background: url('/img/share_ch.png') no-repeat 0 0;
   position: absolute;
   top: 10%;
-  right: 20px;
-  background-size: 220px 340px;
+  right: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 320px;
+  height: 210px;
+  background-size: 100% 100%;
 }
 .middle-vip-container .middle-main-container .vip-middle-float img {
-  width: 180px;
-  height: 180px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 65px;
 }
 .middle-vip-container .middle-main-container .vip-middle-float .detail-link-container {
   font-size: 12px;
@@ -250,16 +248,18 @@
   color: #666;
 }
 .middle-vip-container .middle-main-container .vip-middle-float .detail-link-container input {
-  background: #FFFFFF;
+  background: #FFF;
   border-radius: 2px;
-  width: 198px;
+  width: 188px;
   height: 24px;
   text-align: center;
   line-height: 24px;
+  position: absolute;
+  left: 24px;
+  top: 66px;
 }
 .middle-vip-container .middle-main-container .vip-middle-float .detail-link-container span {
-  background: #4A90E2;
-  box-shadow: 0px 2px 4px 0px rgba(73, 143, 226, 0.6);
+  background: #C5BD8B;
   border-radius: 2px;
   width: 80px;
   text-align: center;
@@ -267,11 +267,17 @@
   line-height: 24px;
   align-self: flex-end;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #FFF;
   position: absolute;
-  right: 10px;
-  bottom: 16px;
+  left: 25px;
+  top: 118px;
   cursor: pointer;
+}
+.middle-vip-container .middle-main-container .vip-middle-float .detail-link-container span:hover {
+  background: #BCB16B;
+}
+.middle-vip-container .middle-main-container .vip-middle-float-en {
+  background-image: url('/img/share_en.png');
 }
 .middle-vip-container .middle-money-container .middle-header {
   display: flex;
@@ -554,6 +560,9 @@
 .middle-ticket-list-container .middle-header .header-title {
   font-size: 14px;
   color: #333333;
+}
+.middle-ticket-list-container .list-main-container {
+  margin-bottom: 40px;
 }
 .middle-ticket-list-container .list-main-container .list-main-title {
   display: flex;

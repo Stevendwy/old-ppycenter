@@ -81,7 +81,11 @@
   font-size: 10px;
   color: #333333;
 }
+.share-background-container .share-container .share-body-container .share-main .share-top-container .share-detail-msg .button-container {
+  display: flex;
+}
 .share-background-container .share-container .share-body-container .share-main .share-top-container .share-detail-msg .button {
+  margin-right: 20px;
   background: #4A90E2;
   border-radius: 2px;
   width: 80px;

@@ -12,6 +12,7 @@ export default class UserPay extends Component {
 			fatherIndex:"",
 			paymoney: "",
 			type: "",
+			brandExtMsg: "",
 			paytype: "wechat",
 			discount_num: 0,
 			payBrand:"",
@@ -28,13 +29,13 @@ export default class UserPay extends Component {
 		getAjax("/order/commodity", "", response => {
 			let _activeIndex = 0
 			let _fatherIndex = 0
-			for(let i = 0 ;i < response.data.length ; i++){
+			for(let i = 0 ;i < response.data.length ; i++) {
 				let item = response.data[i]
-				for(let j = 0;j < item.data.length ; j++){
-					if(item.data[j].showHot){
+				for(let j = 0;j < item.data.length ; j++) { 
+					if(item.data[j].showHot) {
 						_activeIndex = j
 						_fatherIndex = i
-						if(!item.data[j].coupon_enable){
+						if(!item.data[j].coupon_enable) {
 							this.setState({
 								isDisable: true
 							})
@@ -51,8 +52,9 @@ export default class UserPay extends Component {
 				activeIndex: _activeIndex,
 				fatherIndex:_fatherIndex,
 				paymoney: response.data[_fatherIndex].data[_activeIndex].contents[2],
-				payBrand: response.data[_fatherIndex].data[_activeIndex].contents[0],
+				payBrand: response.data[_fatherIndex].data[_activeIndex].contents[1] ? (response.data[_fatherIndex].data[_activeIndex].contents[0] + "(" +response.data[_fatherIndex].data[_activeIndex].contents[1]+ ")" ) : response.data[_fatherIndex].data[_activeIndex].contents[0],
 				type: response.data[_fatherIndex].data[_activeIndex].id,
+				brandExtMsg: response.data[_fatherIndex].data[_activeIndex].contents[1],
 				payTitle: response.data[_fatherIndex].title			
 			})
 		})
@@ -69,6 +71,7 @@ export default class UserPay extends Component {
 				if(res.enable){
 					sessionStorage.setItem('priceType', this.state.type);
 					sessionStorage.setItem("payType", this.state.paytype);
+					sessionStorage.setItem("brandExtMsg", this.state.brandExtMsg);
 					let value = ""
 					if(!this.state.isDisable){
 						if(this.isSure){
@@ -78,16 +81,16 @@ export default class UserPay extends Component {
 					}else {
 						sessionStorage.setItem("coupon_num", "")
 					}
-					location.href = "/pays/wxpage"
+					location.href = "?/loop=buy"
 				}else{
-					alert("你的试用机会已用完")
+					alert(zhEn("你的试用机会已用完",'Your trail purchasing has exceed limit.'))
 				}
 			})
 		}else {
-			alert("支付金额不能为0")
+			alert(zhEn("支付金额不能为0",'Illegal Payment'))
 		}
 	}
-
+// {zhEn('复制','copy')}
 	pay(fatherIndex,index){
 		// let title = "" 
 		// if(fatherIndex == 0){
@@ -101,22 +104,22 @@ export default class UserPay extends Component {
 
 		let key = fatherIndex + '' + index
 		let _isDisable;
-
 		if(this.hashDisable[key]) {
 			_isDisable = true;
 		}else {
 			_isDisable = false
 		}
-
 		this.setState({
 			isDisable: _isDisable
 		},()=>{
+			let datas = this.state.footerData[fatherIndex].data[index].contents
 			this.setState({
 				activeIndex: index,
 				fatherIndex: fatherIndex,
-				paymoney: this.state.footerData[fatherIndex].data[index].contents[2],
-				payBrand: this.state.footerData[fatherIndex].data[index].contents[0],			
+				paymoney: datas[2],
+				payBrand: datas[1] ? datas[0] + `(${datas[1]})` : datas[0],			
 				type: this.state.footerData[fatherIndex].data[index].id,
+				brandExtMsg: datas[1],
 				payTitle: this.state.footerData[fatherIndex].title
 			})
 		})
@@ -144,7 +147,7 @@ export default class UserPay extends Component {
 
 	toActive(){
 		if(this.state.isDisable){
-			alert("此商品不能优惠劵")
+			alert(zhEn("此商品不能优惠劵",'Voucher is unaviable for this product.'))
 			return;
 		}
 		let value = this.refs.codeInput.value
@@ -175,7 +178,7 @@ export default class UserPay extends Component {
 		let _paymoney = this.state.paymoney
 		let alipay_url = this.state.paytype =="alipay" ? "/img/icon_select.png" : "/img/icon_unselected.png"
 		let wechat_url = this.state.paytype =="alipay" ? "/img/icon_unselected.png" : "/img/icon_select.png"
-		let text = this.state.paytype == "alipay" ? "确认使用支付宝付款" : "确认使用微信付款"
+		let text = this.state.paytype == "alipay" ? zhEn("确认使用支付宝付款" ,'CHECKOUT SECURELY'): zhEn("确认使用微信付款",'CHECKOUT SECURELY')
 		// let lastMoney = (this.state.paymoney - this.state.discountMoney) > 0 ?
 		let totalMoney;
 		let tureMoney = this.state.paymoney;
@@ -197,14 +200,14 @@ export default class UserPay extends Component {
 		return (
 			<div className="userpay-container">
 				<div className="userpay-title">
-					购买续费
+				{zhEn('购买续费','Purchase/Renew Membership')}
 				</div>
 				<div className="container-head">
 					<div> 
-						第一步：选择套餐类型
+					{zhEn('第一步：选择套餐类型','Step 1：Choose A Deal')}
 					</div>
 					<div>
-						第二步：选择支付方式
+					{zhEn('第二步：选择支付方式','Step 2：Select Payment Method')}
 					</div>
 				</div>
 				<div className="container-main">
@@ -222,7 +225,7 @@ export default class UserPay extends Component {
 						<div className='pay-money-title'>
 							<div className="buy-type-box">
 								<span>
-									套餐类型：{this.state.payTitle}
+								{zhEn('套餐类型：','Package Type：')}{this.state.payTitle}
 								</span>
 								<span>
 								</span>
@@ -230,7 +233,7 @@ export default class UserPay extends Component {
 							<div className="brand-type-box">
 								<span>
 									<b>
-										使用内容：
+									{zhEn('使用内容：','Brand Coverd：')}
 									</b>
 									<span>
 										{this.state.payBrand}
@@ -244,26 +247,26 @@ export default class UserPay extends Component {
 						
 						<div className="pay-code-container">
 							<div className={this.state.isSucc ? "big-sale-box active":"big-sale-box"}>
-								<input onChange={this.inputChange.bind(this)} className="big-sale-code" placeholder="输入优惠码" ref="codeInput" type="text"/>
-								<span className="to-active-button" onClick={this.toActive.bind(this)}>激活并使用</span>
+								<input onChange={this.inputChange.bind(this)} className="big-sale-code" placeholder={zhEn("输入优惠码",'Enter Voucher')} ref="codeInput" type="text"/>
+								<span className="to-active-button" onClick={this.toActive.bind(this)}>{zhEn('激活并使用','Activate')}</span>
 							</div>
 							<div className="big-sale-ex">
 								<span className="msg-ex">
-									如何获取优惠码？
+								{zhEn('如何获取优惠码？','How to get voucher?')}
 									<div className="msg-data-hover">
-										优惠码来源：<br/>
-										1.个人中心-我的优惠码； <br/>
+									{zhEn('优惠码来源：','')}<br/>
+									{zhEn('1.个人中心-我的优惠码； ','1. My account > Voucher')}<br/>
 										{/* 2.向其他零零汽用户索取；<br/> */}
-										2.向零零汽市场人员索取。<br/>
+										{zhEn('2.向零零汽市场人员索取。','2. Ask 007vin seller for voucher.')}<br/>
 									</div>		
 								</span>
 								<div className="error-ex-box">
-									{this.state.isDisable ? "不能使用优惠劵" : this.state.errorTitle}
+									{this.state.isDisable ? zhEn("不能使用优惠劵","This voucher is unavaibale.") : this.state.errorTitle}
 								</div>
 							</div>
 						</div>
 						<div className='pay-money'>
-							<span>应付金额：</span>
+							<span>{zhEn('应付金额：','Total:')}</span>
 							<span className="money-detail">￥{this.lastMoney}</span>
 						</div>
 						<div className="choose-pay">
@@ -272,7 +275,7 @@ export default class UserPay extends Component {
 								<img src={wechat_url} alt=""/>
 							</div>	
 							<div onClick={this.payTypeClick.bind(this,"alipay")}>
-								<img src="/img/p_alipay.png" alt="支付宝"/>
+								<img src="/img/p_alipay.png" alt={zhEn("支付宝",'Alipay')}/>
 								<img src={alipay_url} alt=""/>
 							</div>					
 						</div>
@@ -360,7 +363,7 @@ class Row extends Component {
 		let _pay = this.props.click
 		let _active = this.props.active ? "active":""
 		let _src = this.props.active ? "/img/icon_select.png" : "/img/icon_unselected.png"
-		let _dateType = this.props.dateType == "day" ? "/当日" : (this.props.dateType == "month" ? "/月" : "/年")
+		let _dateType = this.props.dateType == "day" ? zhEn("/当日",'/today') : (this.props.dateType == "month" ? zhEn("/月",'/month') : zhEn("/年",'/year'))
 		return (
 			<div className={'container-row '} onClick={_pay}>
 				<div className='column'>

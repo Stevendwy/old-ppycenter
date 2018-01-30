@@ -1,3 +1,7 @@
+.MiddleHeightFull {
+  height: calc(100% - 72px);
+  min-height: 500px;
+}
 .NmiddleLeft {
   float: left;
 }
@@ -125,6 +129,7 @@
 }
 .Nmiddlecontent {
   position: relative;
+  height: 100%;
 }
 .UserPayment {
   /*position: absolute;
@@ -166,10 +171,11 @@
 }
 .PaymentBodyHead > span {
   float: left;
-  width: 147px;
+  width: 200px;
   height: 40px;
   line-height: 40px;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
   font-size: 14px;
   color: #999999;
 }
@@ -322,6 +328,7 @@
   display: flex;
   padding: 5px 20px;
   /* max-height: 444px; */
+  margin-bottom: 30px;
   overflow: auto;
 }
 .container-list {
@@ -367,6 +374,7 @@
 .item-container .item-group .container-row,
 .item-type-container .item-group .container-row {
   background: #F6F6F6;
+  position: relative;
 }
 .item-type-container {
   /* font-size: 14px;
@@ -407,8 +415,10 @@
   font-weight: normal;
 }
 .container-list .container-row > .column:nth-child(1) > .hot {
-  /* width: 46px; */
-  height: 20px;
+  height: 24px;
+  position: absolute;
+  right: 98px;
+  top: -8px;
 }
 /* .container-list .container-row > .column:nth-child(2) {
   width: 30%;
@@ -525,6 +535,12 @@
   letter-spacing: 1.55px;
   line-height: 40px;
   cursor: pointer;
+}
+.media-button .media-pay-button:hover {
+  background: #E65109;
+}
+.media-button .media-pay-button:active {
+  background: #C34000;
 }
 .media-button .media-test-button {
   line-height: 40px;
@@ -647,6 +663,7 @@
 }
 .container-right .pay-code-container .big-sale-ex .msg-ex .msg-data-hover {
   display: none;
+  line-height: 24px;
   position: absolute;
   z-index: 1;
   background: rgba(255, 255, 255, 0.9);

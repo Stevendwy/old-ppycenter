@@ -29,24 +29,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   display: none;
   justify-content: center;
   z-index: 999;
+  align-items: center;
 }
 .container_verification_window .container_content {
   position: relative;
-  margin-top: 104px;
-  width: 560px;
   height: 356px;
   border-radius: 4px;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 360px;
 }
 .container_verification_window .container_content span.title {
-  color: #666;
+  color: #4990E2;
   font-size: 18px;
   margin-top: 20px;
 }
@@ -57,7 +57,7 @@
 }
 .container_verification_window .container_content div {
   position: relative;
-  height: 32px;
+  height: 40px;
   width: 100%;
   margin: 10px 0;
 }
@@ -80,7 +80,12 @@
   font-size: 14px;
   outline: 0;
   padding-left: 10px;
-  margin-left: 120px;
+  background: #F6F6F6;
+  border: 1px solid #D8D8D8;
+  border-radius: 4px;
+  margin-left: 20px;
+  width: 320px !important;
+  height: 40px;
 }
 .container_verification_window .container_content div .short {
   width: 160px;
@@ -90,15 +95,15 @@
 }
 .container_verification_window .container_content div .clear {
   position: absolute;
-  right: 105px;
-  top: -15px;
+  right: 22px;
+  top: -10px;
   width: 40px;
   height: 40px;
   z-index: 5;
   background: url(https://cdns.007vin.com/img/p_wo.png) 0 -680px;
 }
 .container_verification_window .container_content div .inputvalue {
-  right: 275px;
+  right: 114px;
 }
 .container_verification_window .container_content div .inputvalue:hover {
   background: url(https://cdns.007vin.com/img/p_wo.png) 0 -640px;
@@ -111,13 +116,17 @@
 }
 .container_verification_window .container_content div .button_verification {
   margin-left: 20px;
-  width: 148px;
+  width: 100px;
   height: 32px;
   outline: 0;
   border: 0;
   background-color: #999;
   border-radius: 2px;
-  color: white;
+  position: absolute;
+  right: 21px;
+  height: 40px;
+  background: none !important;
+  color: #333;
 }
 .container_verification_window .container_content div .wait {
   background-color: #1aa0f3;
@@ -127,25 +136,42 @@
 }
 .container_verification_window .container_content .goto_pay {
   width: 328px;
-  height: 32px;
+  height: 40px;
   background-color: #1aa0f3;
   color: white;
   font-size: 14px;
   outline: 0;
   border: 0;
+  line-height: 40px;
   margin-top: 30px;
+  background: #4990E2;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(74, 144, 226, 0.14), 0 0 2px 0 rgba(74, 144, 226, 0.12);
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 36px;
+}
+.container_verification_window .container_content .goto_pay:hover {
+  background: #1d77e0;
+}
+.container_verification_window .container_content .goto_pay:active {
+  background: #135eb6;
 }
 .container_verification_window .container_content .close {
   position: absolute;
-  top: 0;
-  right: 0;
-  height: 40px;
-  width: 40px;
-  border: 0;
-  outline: 0;
-  background: url(https://cdns.007vin.com/img/p_wo.png) 0 360px;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #f2f2f2;
 }
-.container_verification_window .container_content .close:hover {
-  background: url(https://cdns.007vin.com/img/p_wo.png) 0 240px;
+.container_verification_window .container_content .close img {
+  position: relative;
+  top: 5px;
+  left: 10px;
+  width: 12px;
+  height: 12px;
 }

@@ -2,7 +2,7 @@
 * @Author: steven
 * @Date:   2017-05-10 14:42:45
 * @Last Modified by:   steven
-* @Last Modified time: 2017-07-04 16:28:25
+* @Last Modified time: 2017-11-28 14:25:01
 */
 
 'use strict';
@@ -21,19 +21,19 @@ export default class MiddleRightThree extends Component {
 			totalPage:1, //总页数
 			mesdata:{data:[]},
 			clickindex:-1,
-			clicktype:"全文"
+			clicktype:zhEn("全文","All")
 		}
-		this.head="系统消息"		//头部信息
+		this.head= zhEn("系统消息","Messages")		//头部信息
 		this.clickstore = []
 	}
 	showClick(index,type){
-		let _type = type=="全文"?"收起":"全文"
+		let _type = type==zhEn("全文","All")?zhEn("收起","Hide"):zhEn("全文","All")
 		this.setState({
 			clickindex:index,
 			clicktype:_type
 		})
 	}
-	//点击翻页
+	//点击翻页 zhEn('',"")
 	pageClick(pageNum) {
 		let _this = this;
 		if (pageNum != _this.state.current) {
@@ -72,8 +72,8 @@ export default class MiddleRightThree extends Component {
 				"inid":inid
 			}
 			getAjax(_urlread, _data, response => {
-				console.log(response)
-				this.getlistdata()
+				// console.log(response)
+				this.getlistdata(this.state.current)
 			},()=>{
 				this.setState({
 					clickstore:this.clickstore
@@ -104,46 +104,49 @@ export default class MiddleRightThree extends Component {
 	render() {
 		let _totalpage = this.state.totalPage
 		let _page = this.state.current
-
-		let _data = this.state.mesdata 
+		let _data = this.state.mesdata
 		let _datalist = <div></div>
-			if (_data.data.length>0) {
-				_datalist = _data.data.map((item,i)=>{
-					let _length = item["msg_text"].length
-					let _world =_length >120?"全文":""
-					let _heigth = _length >120?"36px":"auto"
-					if (this.state.clickindex==i) {
-						_world=this.state.clicktype
-						_heigth=_world=="收起"?"auto":"36px"
-					}
-					let _reading = item.status == 1 ? "block":"none"
-					return (
-						<div key={i} className="FourContent" onClick={this.readMessage.bind(this,i,item.inid,_reading)}>
-							<div className="FourListLeft">
-								<p>
-									{item.title}
-									<span className="redmessage" style={{display:_reading}}></span>
-								</p>
-								<p>{item.magtime}</p>
-							</div>
-							<div className="FourListRight">
-								<div className="FourListRightLeft" style={{height:_heigth}}>{item["msg_text"]}</div>
-								<div className="FourListRightRight" onClick={this.showClick.bind(this,i,_world)}>{_world}</div>
-							</div>
+		if (_data.data.length>0) {
+			_datalist = _data.data.map((item,i)=>{
+				let _length = item["msg_text"].length
+				let _world =_length >120?zhEn("全文","All"):""
+				let _heigth = _length >120?"36px":"auto"
+				if (this.state.clickindex==i) {
+					_world=this.state.clicktype
+					_heigth=_world==zhEn("收起","Hide")?"auto":"36px"
+				}
+				let _reading = item.status == 1 ? "block":"none"
+				return (
+					<div key={i} className="FourContent" onClick={this.readMessage.bind(this,i,item.inid,_reading)}>
+						<div className="FourListLeft">
+							<p>
+								{item.title}
+								<span className="redmessage" style={{display:_reading}}></span>
+							</p>
+							<p>{item.magtime}</p>
 						</div>
-					)
-				})
-			} 
+						<div className="FourListRight">
+							<div className="FourListRightLeft" style={{height:_heigth}}>{item["msg_text"]}</div>
+							<div className="FourListRightRight" onClick={this.showClick.bind(this,i,_world)}>{_world}</div>
+						</div>
+					</div>
+				)
+			})
+		}
 		return (
 				<div className="NmiddleLeftListImgFourhas">
 					<div className="FourHead">{this.head}</div>
 						{_datalist}
-					<DgroupPage
-                          current={_page}
-                          totalPage={_totalpage}
-                          pageClick={this.pageClick.bind(this)}
-                          goPrev={this.goPrevClick.bind(this)}
-                          goNext={this.goNext.bind(this)}/>
+					{
+						_totalpage > 1 
+						? <DgroupPage
+							current={_page}
+							totalPage={_totalpage}
+							pageClick={this.pageClick.bind(this)}
+							goPrev={this.goPrevClick.bind(this)}
+							goNext={this.goNext.bind(this)}/>
+						: null
+					}
 				</div>
 			
 		)

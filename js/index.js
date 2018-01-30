@@ -5,6 +5,7 @@ import Top from './top'
 import Middle from './middle'
 import Bottom from './bottom'
 import Utils from './utils'
+import MeddlePay from './meddlepay'
 import {middleEvents, sendEvent} from './eventmodel'
 
 class Page extends Component {
@@ -42,10 +43,21 @@ class Page extends Component {
 		let _clicknum = this.state.clicknum
 		let _middle
 		let _icons = this.icons
+		console.log(location.search)
+		
 		let _selectedIcons = this.selectedIcons
 		if(_clicknum = 0) _middle = <div></div>
 		else _middle = <Middle
 					inquireType={_inquireType}/>
+		
+
+		if(location.search === "?/loop=buy") {
+			_middle = <MeddlePay/>
+			
+		}
+
+
+		
 		let _bgc="#fff"
 		return (
 			<div className="PageContainer" style={{backgroundColor:_bgc}} onClick={() => sendEvent(middleEvents.pageClick)}>

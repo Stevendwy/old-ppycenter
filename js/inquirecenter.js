@@ -61,7 +61,7 @@ export default class InquireCenter extends Component {
 	componentDidMount() {
 		this.updateUserInfo()
 		catchEvent(middleEvents.titleCanTan, e => {
-			this.msgShowToHide("请先完成支付")
+			this.msgShowToHide(zhEn("请先完成支付","Please complete your payment."))
 		})
 		this.pollTimer = setInterval(() => {
 			this.settimegetmes()
@@ -78,24 +78,33 @@ export default class InquireCenter extends Component {
 	updateUserInfo() {
 		getAjax("/user/info", "", response => {
 			//弹框是否过期处理 response.overdue=="已过期"
-			// let _show = (response.left_dates > 7) || (response.left_dates == "") ? "none" : "none"
 			let _show = "none"
-				// let _buy = (response.is_payment == "已付款" && response.overdue == "未过期") ? "续费" : "购买"
-				// !this.state.isVip
-				// let _ok = (response.is_payment == "未付款" || response.overdue == "已过期") ? "block" : "none"
 			let _ok = "none"
 			let _showbody = <div></div>
 			let _showlist = [0, 0, 1, 0 , 0]
 				//对应列表显示从home 登录页跳转过来或者注册页跳转过来显示第三栏
 			if (this.types == "home" || this.types == "regiest") {
+				if(zhEn(false,true)){
+					this.headerTitles = ['Choose a package', 'Valid until', 'The price']
+				}
 				_showbody = <UserPay onClick={this.toPayClick.bind(this)}
 				    headerTitles={this.headerTitles}
 				/>
-				_showlist = [0, 0, 0, 0 ,0, 1]
+				_showlist = [0, 0, 0, 0, 1]
 			}else if(this.types == "shopping"){
 				_showbody = <MiddleShopping />
-				_showlist = [0, 1, 0, 0 ,0, 0]
-			}else{
+				_showlist = [0, 1, 0, 0 , 0]
+			}
+			// else if(this.types == "account"){
+			// 	_showbody = <MiddleRightOne 
+			// 					bindmes={this.state.middlerightonemess}
+			// 					BtnShow={this.BtnShow.bind(this)}
+			// 					updateUserInfo={this.updateUserInfo.bind(this)}
+			// 					showQR={this.showQR.bind(this)}	
+			// 				/>
+			// 	_showlist = [0, 0, 0, 1 ,0, 0]
+			// }
+			else {
 				_showbody = (
 					<MiddleVipDetail 
 						showQR={this.showQR.bind(this)}
@@ -103,22 +112,22 @@ export default class InquireCenter extends Component {
 						updateUserInfo={this.updateUserInfo.bind(this)}
 						buyClick = {this.boBuyClick.bind(this)} 
 						updataMoney={this.updataMoney.bind(this)}						
-						data= {response} 
-						score= {response.data.score}
-						BtnShow= {this.BtnShow.bind(this)}/>
+						data={response} 
+						score={response.data.score}
+						BtnShow={this.BtnShow.bind(this)}
+						middlerightonemess={this.state.middlerightonemess}
+						showQR={this.showQR.bind(this)}
+					/>
 				)
-				_showlist = [1, 0, 0, 0, 0, 0]
+				_showlist = [1, 0, 0, 0, 0]
 			}
 			if (this.secondtype == "messages") {
 				_showbody = <MiddleRightThree />
-				_showlist = [0, 0, 1, 0, 0 ,0]
+				_showlist = [0, 0, 1, 0 ,0]
 			}else if(this.secondtype == "ticket") {
 				_showbody = <TickeyBox />
-				_showlist = [0, 0, 0, 0, 1, 0]
+				_showlist = [0, 0, 0, 1, 0]
 			}
-
-
-
 			this.setState({
 				middlerightonemess: response,
 				nmiddleLeftListClick: _showlist,
@@ -141,21 +150,31 @@ export default class InquireCenter extends Component {
 		// alert(JSON.stringify(item))
 	}
 
-	chooseClick(containers) {
+	chooseClick(containers, router= {}) {
 		let _newshow = <div></div>
-		let _nmiddleLeftListClick = [0, 0, 0, 0, 0, 0, 0]
-		switch (containers) {
+		let _nmiddleLeftListClick = [0, 0, 0, 0, 0, 0]
+		switch(containers) {
 			case "vipcontainer":
+				let detailShow;
+				if(router.detailShow) {
+					detailShow = true
+				}
 				_newshow = (
 					<MiddleVipDetail
-						showQR={this.showQR.bind(this)}
-						bindmes={this.state.middlerightonemess}
+						showQR= {this.showQR.bind(this)}
+						bindmes= {this.state.middlerightonemess}
 						updateUserInfo={this.updateUserInfo.bind(this)}
 						buyClick = {this.boBuyClick.bind(this)} 
-						data={this.state.baseInfoData} 
-						score={this.state.score}
+						data= {this.state.baseInfoData} 
+						score= {this.state.score}
+						detailShow= {detailShow}						
 						updataMoney={this.updataMoney.bind(this)}
-						BtnShow={this.BtnShow.bind(this)}/>
+						BtnShow={this.BtnShow.bind(this)}
+						middlerightonemess={this.state.middlerightonemess}
+						// BtnShow={this.BtnShow.bind(this)}
+						// updateUserInfo={this.updateUserInfo.bind(this)}
+						showQR={this.showQR.bind(this)}
+					/>	
 				)
 				_nmiddleLeftListClick[0] = 1
 				break;
@@ -167,28 +186,28 @@ export default class InquireCenter extends Component {
 				_newshow = <MiddleRightThree /> 
 				_nmiddleLeftListClick[2] = 1
 				break;
-			case "countcontainer":
-				_newshow = <MiddleRightOne
-								bindmes={this.state.middlerightonemess}
-								BtnShow={this.BtnShow.bind(this)}
-								updateUserInfo={this.updateUserInfo.bind(this)}
-								showQR={this.showQR.bind(this)}/>
-				_nmiddleLeftListClick[3] = 1
-				break;
+			// case "countcontainer":
+			// 	_newshow = <MiddleRightOne
+			// 					bindmes={this.state.middlerightonemess}
+			// 					BtnShow={this.BtnShow.bind(this)}
+			// 					updateUserInfo={this.updateUserInfo.bind(this)}
+			// 					showQR={this.showQR.bind(this)}/>
+			// 	_nmiddleLeftListClick[3] = 1
+			// 	break;
 			// case "usecontainer":
 			// 	_newshow = <MiddleRightTwo />
 			// 	_nmiddleLeftListClick[4] = 1
 			// 	break;
 			case "ticketcontainer":
 				_newshow = <TickeyBox/>
-				_nmiddleLeftListClick[4] = 1
+				_nmiddleLeftListClick[3] = 1
 				break;
 			case "buycontainer":
 				_newshow = <UserPay
 					headerTitles={this.headerTitles}
 					onClick = {this.toPayClick.bind(this)}
 				/>
-				_nmiddleLeftListClick[5] = 1
+				_nmiddleLeftListClick[4] = 1
 				break;
 			default:
 				_newshow = (
@@ -214,40 +233,49 @@ export default class InquireCenter extends Component {
 		})
 	}
 
-	showQR(shouldShow) {
+	showQR(shouldShow, callback) {
 		this.setState({
 			qrShow: shouldShow
-		}, this.qrInfo.bind(this))
+		}, this.qrInfo.bind(this, callback))
 	}
 
-	qrInfo() {
+	qrInfo(callback) {
 		getAjax("/wechat/bind/qrcode", null, res => {
-			this.setState({qrImgUrl: res.img}, this.qrResult.bind(this))
+			this.setState({qrImgUrl: res.img}, this.qrResult.bind(this, callback))
 		})
 	}
 
-	qrResult() {
+	qrResult(callback) {
 		this.resultInterval = setInterval(() => {
 			getAjax('/wechat/bind/check', null, res => {
 				switch(res.code) {
 					case 405: // 成功
 						this.setState({qrShow: false}, () => {
 							clearInterval(this.resultInterval)
-							alert('绑定成功')
-							this.updateUserInfo()
+							alert(zhEn('绑定成功',"Binding success"))
+							if(callback) {
+								callback()
+								getAjax("/user/info", "", response => {
+									this.setState({
+										middlerightonemess: response
+									})
+								})
+							}else {
+								this.updateUserInfo()
+							}
 						})
 						break
 					case 406: // 此微信已经绑定过其他账号
 						this.setState({qrShow: false}, () => {
 							clearInterval(this.resultInterval)
-							alert('此微信已经绑定过其他账号')
+							alert(zhEn('此微信已经绑定过其他账号',"This WeChat has been bound to other accounts."))
 						})
 						break
 					case 408: // 等待, 轮询
 						;
 						break
 					case 404: // 没有收到验证请求
-						alert('没有收到验证请求, 请重试')
+						alert(zhEn('没有收到验证请求, 请重试',"Please try again without receiving the verification request."))
 						break
 					default:
 						alert(res.msg)
@@ -260,9 +288,9 @@ export default class InquireCenter extends Component {
 		if(this.state.qrShow) return (
 			<div className='container-qr'>
 				<div className='qr'>
-					<span className='bind'>绑定微信</span>
+					<span className='bind'>{zhEn("绑定微信","Add WeChat")}</span>
 					<img src={this.state.qrImgUrl} alt='qr' />
-					<span className='scan'>微信扫一扫</span>
+					<span className='scan'>{zhEn("微信扫一扫","Scan QR code")}</span>
 					<div className='close'
 						onClick={() => this.setState({qrShow: false}, () => clearInterval(this.resultInterval))}>
 						<img src='https://cdns.007vin.com/img/user_close.png' alt='close' />
@@ -343,6 +371,10 @@ export default class InquireCenter extends Component {
 		})
 	}
 
+	toGetMoney() {
+		this.chooseClick("vipcontainer", {"detailShow": true})
+	}
+
 	boBuyClick() {
 		this.chooseClick("buycontainer")
 	}
@@ -359,21 +391,27 @@ export default class InquireCenter extends Component {
 		let _vipcontainer = (this.state.nmiddleLeftListClick[0] == 1) ? "vipcontainer" : ""
 		let _shoppingcontainer = (this.state.nmiddleLeftListClick[1] == 1) ? "shoppingcontainer" : ""		
 		let _msgcontainer = (this.state.nmiddleLeftListClick[2] == 1) ? "msgcontainer" : ""
-		let _countcontainer = (this.state.nmiddleLeftListClick[3] == 1) ? "countcontainer" : ""
-		let _usecontainer = (this.state.nmiddleLeftListClick[4] == 1) ? "usecontainer" : ""
-		let _ticketcontainer = (this.state.nmiddleLeftListClick[5]) == 1? "ticketcontainer" : ""
-		let _buycontainer = (this.state.nmiddleLeftListClick[5] == 1) ? "buycontainer" : ""
+		// let _countcontainer = (this.state.nmiddleLeftListClick[3] == 1) ? "countcontainer" : ""
+		// let _usecontainer = (this.state.nmiddleLeftListClick[4] == 1) ? "usecontainer" : ""
+		let _ticketcontainer = (this.state.nmiddleLeftListClick[3]) == 1? "ticketcontainer" : ""
+		let _buycontainer = (this.state.nmiddleLeftListClick[4] == 1) ? "buycontainer" : ""
 		let _FloatIndexOne = this.state.FloatIndexOneShow //whether show
 		let _BtnChangeShow = this.state.BtnChangeShow //修改密码弹框
 			// let _tobuy = this.state.tobuy //购买还是续费
-		let _tobuy = this.state.isVip ? "续费" : "购买"
+			// {zhEn("","")}
+		let _zhEn = zhEn(false, true) 
+
+		let _tobuy = this.state.isVip ? (_zhEn ? "续费":"Renew Membership" ):(_zhEn ? "购买":"Purchase")  
 		let _middle = this.state.newshow
 		let _redbtnshow = this.state.redbtnshow //红点显示
 
 		let _id = this.state.middlerightonemess.userid
-		let _endtime = this.state.middlerightonemess.valid_datetime == "" ? "（ 未购买 ）" : this.state.middlerightonemess.valid_datetime
-		let _containerClass = ["vipcontainer","shoppingcontainer","msgcontainer","countcontainer","ticketcontainer","buycontainer"]
-		let _containerText = ["会员权益","报价单","系统消息","账户管理","我的优惠码","购买续费"]
+		let _endtime = this.state.middlerightonemess.valid_datetime == "" ? (_zhEn ? "（ 未购买 ）":"(not purchased)" ) : this.state.middlerightonemess.valid_datetime
+		let _containerClass = ["vipcontainer","shoppingcontainer","msgcontainer","ticketcontainer","buycontainer"]
+		let _containerText = ["会员权益","报价单","系统消息","我的优惠码","购买续费"]
+			if(_zhEn){
+				_containerText = ["ACCOUNT","QUOTATION","MESSAGE","VOUCHER","PURCHASE"]
+			}
 		let _buyType = (
 			<div>
 				{
@@ -381,7 +419,7 @@ export default class InquireCenter extends Component {
 						return (
 							<div key={index}>
 								<span>{item.name}</span>|
-								<span>有效期至:</span>
+								<span>{zhEn("有效期至:","Valid until:")}</span>
 								<span>
 									{item.valid_datetime}
 								</span>
@@ -389,15 +427,15 @@ export default class InquireCenter extends Component {
 						)
 					})
 				}
-				<div className="button" onClick={this.boBuyClick.bind(this)}>续费</div>
+				<div className="button" onClick={this.boBuyClick.bind(this)}>{zhEn("续费","Renew Membership")}</div>
 			</div>
 		)
 
 		if (!this.state.isVip) {
 			_buyType = (
 				<div>
-					<div className="notVip">非会员</div>
-					<div className="button" onClick={this.boBuyClick.bind(this)}>购买</div>
+					<div className="notVip">{zhEn("非会员","Trial User")}</div>
+					<div className="button" onClick={this.boBuyClick.bind(this)}>{zhEn("购买","Purchase")}</div>
 				</div>
 			)
 		}
@@ -408,7 +446,8 @@ export default class InquireCenter extends Component {
 						onClick={()=>{this.setState({FloatIndexOneShow:"none"})}}>
 						<div className="FloatIndexOneMess">
 							<div className="bgDelete"></div>
-							您的账号即将到期，请续费
+							{zhEn("您的账号即将到期，请续费","Your membership expires soon, please renew your membership.")}
+							
 						</div>
 					</div>
 					<VerificationWindows
@@ -425,12 +464,17 @@ export default class InquireCenter extends Component {
 								{this.state.userPhone}
 							</div>
 							<div>
-								我的积分 <span className="score">{this.state.score}</span>
+							{zhEn("我的积分","My points:")} <span className="score">{this.state.score}</span>
 							</div>
 							<div>
-								我的现金 <span> ￥{this.state.totalMoney} </span>
+							{zhEn("我的现金","Balance：")} <span> ￥{this.state.totalMoney} </span>
 							</div>
-							<div className="button" onClick={this.boBuyClick.bind(this)}>续费</div>
+							{
+								this.state.totalMoney !== "0.00"
+								? <div className='button' style={{width:zhEn(false,true)?"80px":"56px"}} onClick={this.toGetMoney.bind(this)}>{zhEn("提现","withdrawal")}</div>
+								: null
+							}
+							{/* <div className="button" onClick={this.boBuyClick.bind(this)}>续费</div> */}
 						</div>
 
 					</div>

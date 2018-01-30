@@ -3,10 +3,13 @@ const fs = require('fs')
 const request = require('request');
 const superagent = require('superagent');
 const bodyParser = require('body-parser');
-let myurl = "https://test.007vin.com"
+// let myurl = "https://test.007vin.com"
+let myurl = "https://007vin.com"
+
 // let myurl = "http://192.168.10.111"
 let mycookie = ""
 // 模拟登陆获取cookie
+// let url = myurl + "/login?username=18337125987&password=aa123456"
 let url = myurl + "/login?username=15727575790&password=111111"
 superagent.post(url)
 .set('Content-Type', 'application/json;charset=UTF-8')

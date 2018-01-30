@@ -18,6 +18,84 @@
         width: @w;
         height: 100%;
 
+        .inquires {
+            a {
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 14px;
+                color: #333;
+            }
+            h1 {
+                margin: 0;
+                font-weight: 400;
+                font-size: 14px;
+                color: #333;
+            }
+            position: relative;
+            .combo-home,
+            .combo-com,
+            .combo-cell {
+                padding: 6px 7px;
+                display: flex;
+                margin-right: 6px;
+                position: relative;
+                img {
+                    display: none;
+                    
+                }
+                #_part,
+                #_partEng {
+                    margin: 0;
+                }
+                a {
+                    margin-right: 20px;
+                }
+            }
+            
+            .com-active,
+            .cell-active {
+                background: #ECF5FF;
+                border-radius: 4px;
+                img {
+                    position: absolute;
+                    width: 36px;
+                    cursor: pointer;
+                    height: 22px;
+                    right: -21px;
+                    z-index: 1;
+                    top: -5px;
+                    display: block;
+                }
+            }
+            
+            .error-refash{
+                cursor: pointer;
+                position: absolute;
+                width: 22px;
+                height: 22px;  
+                left: -40px;
+                top:10px;
+                background: url(/img/sprite2.png) no-repeat 0 -239px;
+                background-size: 40px;
+                // opacity: 1; 
+                animation: danger ease 1s infinite;
+                -moz-animation: danger ease 1s infinite;	/* Firefox */
+                -webkit-animation: danger ease 1s infinite;	/* Safari 和 Chrome */
+                -o-animation: danger 1s ease infinite;	   
+            }
+
+            .df;
+            align-items: center;
+            a {
+                margin-right: 20px;
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+
+
         &>div {
             height: 100%;
             display: flex;
@@ -44,16 +122,16 @@
             color: #333;
             cursor: pointer;
         }
-        .inquires {
-            .df;
-            align-items: center;
+        // .inquires {
+        //     .df;
+        //     align-items: center;
 
-            a {
-                margin-right: 20px;
-                height: 36px;
-                line-height: 36px;
-            }
-        }
+        //     a {
+        //         margin-right: 20px;
+        //         // height: 36px;
+        //         // line-height: 36px;
+        //     }
+        // }
 
         .account {
             .df;

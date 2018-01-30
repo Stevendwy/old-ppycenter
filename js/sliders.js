@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 export default class Sliders extends Component {
-	
 	constructor() {
 		super()
 		this.state = {

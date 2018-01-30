@@ -32,9 +32,10 @@
 		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/verificationwindows.css">
 		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/page.css">
 		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/qr.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/city.css">		
 		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/shareform.css">
-		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/middleshopping.css">		
-		
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/middleshopping.css">
+		<link rel="stylesheet" type="text/css" href="https://cdns.007vin.com/css/any_activity.css">		
 		<script src="https://cdns.007vin.com/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="shortcut icon" href="https://cdns.007vin.com/img/logo.ico"/>
 		<style type="text/css">
@@ -61,37 +62,88 @@
 		<div id='header'>
 			<div class='content'>
 				<div class="login">
-					<img src='https://cdns.007vin.com/img/p_007.png' alt='logo' onclick="location.href='/'"/>
-					<span class="back" onclick="location.href='/'">
+					<img class="world_logo" src='https://cdns.007vin.com/img/p_007.png' alt='logo' onclick="location.href='/?type=home'"/>
+					<!-- <span class="back" onclick="location.href='/'">
 						返回
-					</span>
+					</span> -->
 				</div>
+				<!-- <div id='any-activity' onclick="showAnyActivity()"> -->
+				<div id='any-activity'>
+				<!-- <div id='any-activity' onclick="loopLocation('/activity/activity_page?activity_code=2017buy1get1free_audi')"> -->
+					<!-- <img class="any-activity-run" src="https://cdns.007vin.com/img/p_moon.png" alt=""> -->
+					<!-- <img class="any-activity-cartoon" src="https://cdns.007vin.com/img/p_moon1.gif" alt="">					 -->
+					<!-- <img class="any-activity-cartoon" src="https://cdns.007vin.com/img/p_rabbit.png" alt=""> -->
+					<div id="any-activity-poster-back">
+					<div class="any-activity-poster">
+						<img class="any-activity-poster-img" src="https://cdns.007vin.com/img/p_moonp.png" alt="any-activity-poster-img" />
+						<!-- <div class="any-activity-poster-time">
+						<div class="dowebok">
+							<div class="days"></div>
+							<div class="hours"></div>
+							<div class="minutes"></div>
+							<div class="seconds"></div>
+						</div>
+						</div> -->
+						<div class="any-activity-poster-close" onclick="hiddenAnyActivity(event)"></div>
+					</div>
+					</div>
+				</div>
+				<div class='inquires'>
+					<!-- <span class="error-refash" style="display:none" onclick="showdanger()">
+			
+					</span> -->
+					<!-- 全局函数，react 中申明使用 window.changeType -->
+					<b class="combo-home">
+						<a id="_home" href="/?type=home"}>
+						  <h1 class="world_home"></h1>
+						</a>
+					</b>
+					<b class="combo-com">
+					  <a id="_vin" href="/?type=vin"}>
+						<h1 class="world_vin"></h1>
+					  </a>
+					  <a id="_car" href="/?type=car"}>
+						<h1 class="world_car"></h1>
+					  </a>
+					  <a id="_part" href="/?type=part"}>
+						<h1 class="world_part"></h1>
+					  </a>
+					  <img src="/img/p_wait.png"  onclick='location.href = "/user/profile?binds=home"' alt="待开通">
+					</b>
+					<b class="combo-cell">
+					  <a id="_partEng" href="/?type=partEng"}>
+						<h1 class="world_search"></h1>
+					  </a>
+					  <img src="/img/p_wait.png" onclick='location.href = "/user/profile?binds=home"' alt="待开通">          
+					</b>
+				  </div>
+
 				<div id='header-utils' class='utils'>
 					<div class='show'>
 						<a>
-							<div class="FeedBackButton">反馈</div>
+							<div class="FeedBackButton world_feedback"></div>
 						</a>
 						<div class='person'>
-							<div class="center"><span class="icon"></span>个人中心
+							<div class="center wrold_center"><span class="icon"></span>
 								<div class="RedPoint" style="display:none;"></div>
 							</div>
 							<div class='person-hidden'>
 								<div class="LogoutItem" onclick='location.href = "/user/profile?binds=search&type=messages"'>
 									<img src="https://cdns.007vin.com/img/icon_mess.png"/>
-									<span>消息中心</span>
+									<span class="world_message"></span>
 									<div class="RedPoint" style="display:none"></div>
 								</div>
 								<div class="LogoutItem" onclick='location.href = "/user/profile?binds=search"'>
 									<img src="https://cdns.007vin.com/img/user_icon.png"/>
-									<span>个人中心</span>
+									<span class="world_myaccount"></span>
 								</div>
 								<div class="LogoutItem" onclick='location.href = "/user/profile?binds=home"'>
 									<img src="https://cdns.007vin.com/img/p_pay.png"/>
-									<span>续费</span>
+									<span class="world_purchase"></span>
 								</div>
 								<div class="LogoutItem" onclick='location.href = "/logout"'>
 									<img src="https://cdns.007vin.com/img/icon_exit.png"/>
-									<span>退出</span>
+									<span class="world_logout"></span>
 								</div>
 							</div>
 						</div>
@@ -100,17 +152,108 @@
 			</div>
 		</div>
 		<div id="root"></div>
+		<div id="black_alert" style="display:none">
+		</div>
 		<div id="searching" style="position: fixed;bottom:0;left:0;width: 390px;height: 20px;background:#D8D8D8;color:#333;line-height: 20px;padding-left: 20px;font-size: 10px;display: none;">
-			searching搜索中…
+			searching…
 		</div>
 		<script src="https://cdns.007vin.com/js/html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdns.007vin.com/js/drawDom.js" type="text/javascript" charset="utf-8"></script>		
 		<script src="https://cdns.007vin.com/js/less.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://cdns.007vin.com/js/utils.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdns.007vin.com/js/utils.js" type="text/javascript" charset="utf-8"></script>		
 		<script>
 			var cdnHost = "https://cdns.007vin.com/"
 			var version = ""
+			function showAnyActivity() {
+				document.getElementById('any-activity-poster-back').style.display = 'flex'
+			}
+			function hiddenAnyActivity(e) {
+				e.stopPropagation()
+				document.getElementById('any-activity-poster-back').style.display = 'none'
+			}
+			function loopLocation(link) {
+				window.open(link)
+			} 
+			
+			function changeword(){
+				var language = localStorage.getItem("lang") || navigator.language.split('-')[0]
+				if(language === "en"){
+					$(".world_logo").attr("src","https://007vin.com/img/p_007vin.png")
+					$(".world_logo").css({
+						"height":"15px",
+						"width": "69px",
+						"margin-top": "15px"
+					})
+					$(".world_home").text("Home")
+					$(".world_vin").text("VIN")
+					$(".world_car").text("Model")
+					$(".world_part").text("Part")
+					$(".world_search").text("Article")
+
+					$(".world_feedback").text("Feedback")
+					$(".world_message").text("Message")
+					$(".wrold_center").text("Account")
+					$(".world_myaccount").text("Account")
+					$(".world_purchase").text("Purchase")
+					$(".world_logout").text("Log out")
+
+					$('#header-utils').css("width","200px")
+					$(".wrold_center").css({
+						"width":"100px",
+						"backgroundPosition":"92px -182px"
+					})
+				}else{
+					$(".world_logo").attr("src","https://cdns.007vin.com/img/p_007.png")
+					// $(".world_logo").css("height", "20px") 
+					$(".world_home").text("首页")
+					$(".world_vin").text("车架号查询")
+					$(".world_car").text("车型查询")
+					$(".world_part").text("零件号查询")
+					$(".world_search").text("品牌号查询")
+					$(".world_feedback").text("反馈")
+					$(".world_message").text("消息中心")
+					$(".wrold_center").text("个人中心")
+					$(".world_myaccount").text("个人中心")
+					$(".world_purchase").text("续费")
+					$(".world_logout").text("退出")
+				}
+			}
+			changeword()
+			// var treeIndex = 1
+			// function flash(){
+			// 	var treeSrc = $(".any-activity-cartoon").attr('src')
+			// 	var newSrc
+			// 	// treeSrc = "https://cdns.007vin.com/" + treeSrc
+			// 	// console.log(treeSrc)
+			// 	switch(treeSrc) {
+			// 		case "https://cdns.007vin.com/img/p_moon1.png":
+			// 		newSrc = "https://cdns.007vin.com/img/p_moon2.png"
+			// 		break; 
+			// 		case "https://cdns.007vin.com/img/p_moon2.png":
+			// 		newSrc = "https://cdns.007vin.com/img/p_moon3.png"
+			// 		break; 
+			// 		case "https://cdns.007vin.com/img/p_moon3.png":
+			// 		newSrc = "https://cdns.007vin.com/img/p_moon4.png"
+			// 		break; 
+			// 		case "https://cdns.007vin.com/img/p_moon4.png":
+			// 		newSrc = "https://cdns.007vin.com/img/p_moon1.png"
+			// 		break; 
+			// 	}
+
+			// 	$(".any-activity-cartoon").attr('src', newSrc)
+			// 		// if($(".any-activity-run").attr('src') == "https://cdns.007vin.com/img/1111.png") {
+			// 		//   $(".any-activity-run").attr('src', "https://cdns.007vin.com/img/2222.png")
+			// 		// }else{
+			// 		//   $(".any-activity-run").attr('src', "https://cdns.007vin.com/img/1111.png")
+			// 		// }
+			// }
+
+			// (function() {
+			// setInterval(flash, 500)
+			// })()
+
 		</script>
+		
 		<script src="https://cdns.007vin.com/js/userprofile.js" type="text/javascript" charset="utf-8"></script> 
     	<!-- <script src="http://192.168.10.111/js/userprofile.js" type="text/javascript" charset="utf-8"></script> -->
 		

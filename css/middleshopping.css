@@ -1,17 +1,1 @@
-.shopping-container {
-  padding-left: 30px;
-}
-.shopping-container .shopping-title {
-  height: 60px;
-  line-height: 60px;
-  font-size: 14px;
-  color: #333;
-}
-.shopping-container .shopping-list {
-  display: flex;
-}
-.shopping-container .container-shopping-null {
-  background: url(/img/p_nullb.png) no-repeat center center;
-  height: 504px;
-  background-size: 20%;
-}
+.shopping-container{padding-left:30px;margin-bottom:40px}.shopping-container .shopping-title{height:60px;line-height:60px;font-size:14px;color:#333}.shopping-container .list-body-box{min-height:400px}.shopping-container .list-body-box .shopping-list{display:flex}.shopping-container .container-shopping-null{background:url(/img/p_nullb.png) no-repeat center center;height:504px;background-size:20%}.shopping-container .container-shopping-null-en{background-image:url(/img/p_nullb_en.png)}.tickey-msg-ex{margin-top:20px;background:#FAFAFA;border:1px solid #D8D8D8;border-radius:2px;line-height:20px;padding:12px 20px;width:100%;font-size:14px;color:#333}.tickey-msg-ex div{font:18px;color:#333}.tickey-msg-ex span{width:5px;height:5px;margin-right:10px;margin-bottom:2px;display:inline-block;background:#333;border-radius:50%}

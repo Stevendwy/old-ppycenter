@@ -82,20 +82,22 @@ export default class VerificationWindows extends Component {
 					<span className='title'>注册验证</span>
 					<span className='remind'>验证码发送至 123****3211</span>
 					<div>
-						<span className='short_span'>验证码</span>
+						{/* <span className='short_span'>验证码</span> */}
 						<input className='short' placeholder='6位数字' />
 						<button className={_buttonVerificationClass} onClick={_restart}>{_buttonContent}</button>
 					</div>
 					<div>
-						<span>新密码</span>
+						{/* <span>新密码</span> */}
 						<input className='long' placeholder='字母与数字组合，6位以上' />
 					</div>
 					<div>
-						<span>确认新密码</span>
+						{/* <span>确认新密码</span> */}
 						<input className='long' placeholder='字母与数字组合，6位以上' />
 					</div>
 					<button className='goto_pay'>确认</button>
-					<button className='close' onClick={_hidden}></button>
+					<div className='close' onClick={_hidden}>
+						<img src="https://cdns.007vin.com/img/user_close.png" alt="close"/>>
+					</div>
 				</div>
 			</div>
 		)

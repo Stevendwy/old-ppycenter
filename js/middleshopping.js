@@ -43,11 +43,15 @@ export default class MiddleShopping extends Component{
     // }
 
     getList(){
+        let _headerTitles = ['序号', 'VIN / 车型', '报价金额', '创建时间']
+        if (zhEn(false,true)) {
+            _headerTitles = ['Index', 'Model', 'Total', 'Create at']
+        }
         if(this.state.listData){
             return(
                 <NormalList
                 data={this.state.listData.data}
-                headerTitles={['序号', 'VIN / 车型', '报价金额', '创建时间']}
+                headerTitles={_headerTitles}
                 itemKeys={['num', 'title', 'total_money', 'createtime']}
                 listClick={this.listClick.bind(this)}/>
             )
@@ -55,7 +59,7 @@ export default class MiddleShopping extends Component{
     }
 
     getpage(){
-        if(this.state.listData){
+        if(this.state.listData && this.state.listData.total_page > 1){
             return(
                 <Pagination 
                         count={this.state.listData.total_page}
@@ -79,24 +83,34 @@ export default class MiddleShopping extends Component{
         let _shareForm = this.state.showShare ? (
             <ShareForm uid={this.state.uid}  hidden={this.hiddenShare.bind(this)}/>
         ) : null
+        let _bgimg = "container-shopping-null"
+        if (zhEn(false,true)) {
+            _bgimg = "container-shopping-null container-shopping-null-en"
+        }
         // let ShareForm = this.state.showShare ? <ShareForm/> : null    
         let _content = ""
         if(this.state.listData){
             _content = this.state.listData.data.length ? 
                             <div className="shopping-list-container">
-                                <div className="shopping-list">
-                                    {this.getList()}
+                                <div className="list-body-box">
+                                    <div className="shopping-list">
+                                        {this.getList()}
+                                    </div>
+                                    <div className="shopping-page">
+                                        {this.getpage()}
+                                    </div>
                                 </div>
-                                <div className="shopping-page">
-                                    {this.getpage()}
+                                <div className="tickey-msg-ex">
+                                    <div>{zhEn('特别提示','Notification:')}</div>
+                                    <span></span>{zhEn('每笔报价单保存期限为1年。','Each quotation will be kept for one year')}
                                 </div>
                             </div>
-                            : <div className="container-shopping-null"/>
+                            : <div className={_bgimg}/>
         }    
         return(
             <div className="shopping-container">
                 <div className="shopping-title">
-                    报价单
+                {zhEn('报价单','Quotations')}
                 </div>
                 {_content}
                 {_shareForm}

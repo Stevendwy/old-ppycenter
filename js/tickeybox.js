@@ -55,10 +55,10 @@ export default class TickeyBox extends Component {
                                             {
                                                 item.user_phone_ex ? null : <span className="coby-icon" onClick={e => _cobyPart(item[it], e)}>
                                                                                 <span className="cody-success">
-                                                                                    复制成功
+                                                                                    {zhEn('复制成功','Copy success')}
                                                                                 </span>
                                                                                 <span className="coby-msg">
-                                                                                    复制
+                                                                                {zhEn('复制','copy')}
                                                                                 </span>
                                                                             </span>
                                             }
@@ -95,11 +95,14 @@ export default class TickeyBox extends Component {
 
     render(){
         let _ticketListTitle = ["优惠码","优惠内容", "使用期限", "使用者"]
+        if( zhEn(false,true)){
+            _ticketListTitle = ["Coupon","Content", "Use period", "User"]
+        }
         return(
             <div className={"middle-ticket-list-container"}>
                 <div className="list-main-container">
                     <div className="list-main-title">
-                        我的优惠码
+                    {zhEn('我的优惠码','Vouchers')}
                     </div>
                     <div className="list-body-box">
                         {
@@ -121,25 +124,30 @@ export default class TickeyBox extends Component {
                                 </div>
                             </div>
                             <div className="list-footer">
-                                <Pagination
-                                    count={this.state.total_page}
-                                    groupCount={10}
-                                    selectedCount={1}
-                                    callback={(index) => {
-                                        this.getData(index)
-                                    }}
-                                />
+                            {
+                                this.state.total_page > 1 
+                                ?   <Pagination
+                                        count={this.state.total_page}
+                                        groupCount={10}
+                                        selectedCount={1}
+                                        callback={(index) => {
+                                            this.getData(index)
+                                        }}
+                                    />
+                                :   null
+                            }
+                                
                             </div>
-                        </div> : <div className="body-data-null"><img src="/img/tickey_nully.png" alt="优惠码为空"/></div> 
+                        </div> : <div className="body-data-null"><img src={zhEn("/img/tickey_nully.png","/img/tickey_nully_en.png")} alt={zhEn("优惠码为空",'Coupon code is empty')}/></div> 
                         }
                     </div>
                     <div className="tickey-msg-ex">
-                        <div>特别提示</div>
-                        <span></span>当您或他人购买或续费时，在订单页面可以选择（或输入）您的优惠码，获得相应的优惠。 <br/>
-                        <span></span>每个订单限使用一个优惠码。 <br/>
-                        <span></span>请注意：每个优惠码都有使用期限，请在期限之内使用，过期作废。<br/>
-                        <span></span>当您使用优惠码购买的商品发生退货时，将不会退还该优惠码对应的优惠金额。<br/>
-                        <span></span>订单享受某些特定的大力度促销优惠时，因为亏本销售，恕不支持使用优惠码。 <br/>        
+                        <div>{zhEn('特别提示','Notification：')}</div>
+                        <span></span>{zhEn('当您或他人购买或续费时，在订单页面可以选择（或输入）您的优惠码，获得相应的优惠。 ','get discount by entering voucher before payment.')}<br/>
+                        <span></span>{zhEn('每个订单限使用一个优惠码。 ','for each order, one voucher only.')}<br/>
+                        <span></span>{zhEn('请注意：每个优惠码都有使用期限，请在期限之内使用，过期作废。','please use voucher before it is expired.')}<br/>
+                        <span></span>{zhEn('当您使用优惠码购买的商品发生退货时，将不会退还该优惠码对应的优惠金额。','if you want return item, the refund equals exact amount of purchase.')}<br/>
+                        <span></span>{zhEn('订单享受某些特定的大力度促销优惠时，因为亏本销售，恕不支持使用优惠码。 ','voucher might not available during sales.')}<br/>        
                     </div>
                 </div>
             </div>

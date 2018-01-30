@@ -32,9 +32,16 @@ export default class ShareForm extends Component{
         document.body.removeChild(oDiv)
     }
 
-    hidden(){
+    hidden() {
         this.props.hidden()
     }
+
+    downLoad() {
+        getAjax("/quotation/excel_download", {uid: this.props.uid}, res=>{
+            location.href = res.uri
+        })
+    }
+
     render(){
         let isHidden = this.state.isShareShow ? "" : " hidden" 
         let title,total_quantity,createtime,company,person,contact_tel,qr_img,url,total_type,total_money,remark 
@@ -52,7 +59,7 @@ export default class ShareForm extends Component{
             remark = data.contact.remark
             createtime = data.createtime
         }
-
+        
         return(
             <div className={"share-background-container"+isHidden} onClick={this.hidden.bind(this)}>
                 <div className="share-container" onClick={(e)=>{e.stopPropagation()}}>
@@ -67,10 +74,16 @@ export default class ShareForm extends Component{
                                 <div className="share-detail-msg">
                                     <span>微信扫一扫分享报价单</span>
                                     <input value={url}/>
-                                    <span className="button" onClick={this.coby.bind(this,url)}>
-                                        复制链接
-                                        <span>复制成功</span>
-                                    </span>
+                                    <div className="button-container">
+                                        <span className="button" onClick={this.coby.bind(this,url)}>
+                                            复制链接
+                                            <span>复制成功</span>
+                                        </span>
+                                        <span className="button" title="导出Excel" onClick={this.downLoad.bind(this)}>
+                                            导出Excel
+                                        </span>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div className="share-msg-container">
@@ -99,10 +112,10 @@ export default class ShareForm extends Component{
                                                 {
                                                     this.key.map((it,ins)=>{
                                                         let content = item[it]
-                                                        if(ins == 0){
+                                                        if(ins == 0) {
                                                             content = index+1
                                                         }
-                                                        if(ins ==1){
+                                                        if(ins ==1) {
                                                             content = content.replace(/\<br\/\>/g,"  ")
                                                         }
                                                         return(
